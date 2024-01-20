@@ -20,6 +20,8 @@
 		A53211AC2B5C170300E8FB2A /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A53211AA2B5C170300E8FB2A /* SF-Pro-Text-Regular.otf */; };
 		A53211AD2B5C170300E8FB2A /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A53211AB2B5C170300E8FB2A /* SF-Pro-Text-Bold.otf */; };
 		A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */; };
+		A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */; };
+		A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A97032B5C4639007E56E6 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		A53211AA2B5C170300E8FB2A /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		A53211AB2B5C170300E8FB2A /* SF-Pro-Text-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Bold.otf"; sourceTree = "<group>"; };
 		A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderElementView.swift; sourceTree = "<group>"; };
+		A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		A59A97032B5C4639007E56E6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +76,9 @@
 			children = (
 				A532119F2B5C139200E8FB2A /* SupportingFiles */,
 				A532119E2B5C137200E8FB2A /* Resources */,
-				A532118C2B5C08B300E8FB2A /* SplashViewController.swift */,
+				A53211B02B5C1D2F00E8FB2A /* Splash */,
+				A58E1F0C2B5C542B00DF973E /* Main */,
 				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
-				A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -108,6 +112,24 @@
 				A53211AB2B5C170300E8FB2A /* SF-Pro-Text-Bold.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		A53211B02B5C1D2F00E8FB2A /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A532118C2B5C08B300E8FB2A /* SplashViewController.swift */,
+				A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		A58E1F0C2B5C542B00DF973E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A59A97032B5C4639007E56E6 /* MainViewController.swift */,
+				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,9 +238,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A532118D2B5C08B300E8FB2A /* SplashViewController.swift in Sources */,
+				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
+				A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
