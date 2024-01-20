@@ -1,24 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-58-Whn">
+                                <rect key="frame" x="135" y="377" width="123" height="123"/>
+                                <color key="backgroundColor" name="accentOne"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="Wjq-ZA-QE8"/>
+                                    <constraint firstAttribute="width" constant="123" id="mT5-bF-anh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EzB-6j-Ofs">
+                                <rect key="frame" x="141" y="670" width="111" height="34"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flb-75-BUP" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="27.666666666666668" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv7-jo-Arh" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
+                                        <rect key="frame" x="27.666666666666657" y="0.0" width="28" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-ze-exx" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
+                                        <rect key="frame" x="55.66666666666665" y="0.0" width="27.666666666666664" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-EY-eft" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
+                                        <rect key="frame" x="83.333333333333343" y="0.0" width="27.666666666666671" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="ZqF-br-d4z"/>
+                                    <constraint firstAttribute="width" constant="111" id="kzq-uy-MPc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Tiw-58-Whn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="AwW-oZ-qa8"/>
+                            <constraint firstItem="Tiw-58-Whn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gxu-Sa-ntD"/>
+                            <constraint firstItem="EzB-6j-Ofs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aCh-XZ-ory"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EzB-6j-Ofs" secondAttribute="bottom" constant="114" id="laJ-K9-W2j"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstLoaderElement" destination="flb-75-BUP" id="bt8-1w-Ojg"/>
+                        <outlet property="lastLoaderElement" destination="cn3-EY-eft" id="kh3-tD-6LA"/>
+                        <outlet property="secondLoaderElement" destination="Vv7-jo-Arh" id="DBU-XK-qJR"/>
+                        <outlet property="thirdLoaderElement" destination="b5l-ze-exx" id="Cup-UP-ApJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="58" y="-2"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="accentOne">
+            <color red="1" green="0.41176470588235292" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
