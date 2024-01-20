@@ -13,6 +13,8 @@
 		A53211902B5C08B300E8FB2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A532118E2B5C08B300E8FB2A /* Main.storyboard */; };
 		A53211922B5C08B600E8FB2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A53211912B5C08B600E8FB2A /* Assets.xcassets */; };
 		A53211952B5C08B600E8FB2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A53211932B5C08B600E8FB2A /* LaunchScreen.storyboard */; };
+		A53211A22B5C148E00E8FB2A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A53211A12B5C148E00E8FB2A /* RxCocoa */; };
+		A53211A42B5C148E00E8FB2A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A53211A32B5C148E00E8FB2A /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A53211A42B5C148E00E8FB2A /* RxSwift in Frameworks */,
+				A53211A22B5C148E00E8FB2A /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +60,31 @@
 		A53211872B5C08B300E8FB2A /* NASA */ = {
 			isa = PBXGroup;
 			children = (
-				A53211882B5C08B300E8FB2A /* AppDelegate.swift */,
-				A532118A2B5C08B300E8FB2A /* SceneDelegate.swift */,
+				A532119F2B5C139200E8FB2A /* SupportingFiles */,
+				A532119E2B5C137200E8FB2A /* Resources */,
 				A532118C2B5C08B300E8FB2A /* ViewController.swift */,
 				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
+			);
+			path = NASA;
+			sourceTree = "<group>";
+		};
+		A532119E2B5C137200E8FB2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A53211912B5C08B600E8FB2A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A532119F2B5C139200E8FB2A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A53211882B5C08B300E8FB2A /* AppDelegate.swift */,
+				A532118A2B5C08B300E8FB2A /* SceneDelegate.swift */,
 				A53211932B5C08B600E8FB2A /* LaunchScreen.storyboard */,
 				A53211962B5C08B600E8FB2A /* Info.plist */,
 			);
-			path = NASA;
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,12 +97,17 @@
 				A53211812B5C08B300E8FB2A /* Sources */,
 				A53211822B5C08B300E8FB2A /* Frameworks */,
 				A53211832B5C08B300E8FB2A /* Resources */,
+				A532119D2B5C126D00E8FB2A /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = NASA;
+			packageProductDependencies = (
+				A53211A12B5C148E00E8FB2A /* RxCocoa */,
+				A53211A32B5C148E00E8FB2A /* RxSwift */,
+			);
 			productName = NASA;
 			productReference = A53211852B5C08B300E8FB2A /* NASA.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +136,9 @@
 				Base,
 			);
 			mainGroup = A532117C2B5C08B300E8FB2A;
+			packageReferences = (
+				A53211A02B5C148E00E8FB2A /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = A53211862B5C08B300E8FB2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -132,6 +160,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A532119D2B5C126D00E8FB2A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A53211812B5C08B300E8FB2A /* Sources */ = {
@@ -218,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -275,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -293,13 +343,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6QNDZZX45L;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NASA/Info.plist;
+				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,9 +359,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimenko.NASA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,13 +377,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6QNDZZX45L;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NASA/Info.plist;
+				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,9 +393,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.maksimenko.NASA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -363,6 +425,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A53211A02B5C148E00E8FB2A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A53211A12B5C148E00E8FB2A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A53211A02B5C148E00E8FB2A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A53211A32B5C148E00E8FB2A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A53211A02B5C148E00E8FB2A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A532117D2B5C08B300E8FB2A /* Project object */;
 }
