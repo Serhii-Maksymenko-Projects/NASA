@@ -269,11 +269,14 @@
                                                 <constraint firstItem="Qm6-ix-fmb" firstAttribute="leading" secondItem="jL3-ey-Mvg" secondAttribute="leading" constant="20" id="t6E-uW-66R"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cameraLabel" destination="6ao-cj-xzx" id="9AB-RX-E9E"/>
+                                            <outlet property="dateLabel" destination="Huw-L6-iCm" id="Lqn-Nt-AnG"/>
+                                            <outlet property="photoImageView" destination="tMz-kb-hX0" id="Alu-mX-eJW"/>
+                                            <outlet property="roverLabel" destination="jft-k3-02E" id="556-FX-jPZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="UwD-et-Cwq" id="wLf-Zg-uGU"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gS1-Ec-vbV"/>
@@ -289,6 +292,14 @@
                             <constraint firstItem="gS1-Ec-vbV" firstAttribute="trailing" secondItem="6Dl-4i-Kgd" secondAttribute="trailing" id="zwQ-J2-9K0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarButton" destination="ATQ-G0-bNQ" id="Qke-o9-Xby"/>
+                        <outlet property="cameraButton" destination="3iq-Ia-qyR" id="AIy-6v-l40"/>
+                        <outlet property="dateLabel" destination="hMh-1b-kve" id="1sI-yt-Oce"/>
+                        <outlet property="roverButton" destination="JsQ-Qk-qDs" id="s1a-Ps-wbL"/>
+                        <outlet property="saveButton" destination="KbF-TK-hfu" id="Bfm-5f-vth"/>
+                        <outlet property="tableView" destination="Lsr-UT-m3p" id="FES-5o-SmS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55l-1t-UtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

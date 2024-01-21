@@ -22,6 +22,13 @@
 		A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */; };
 		A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */; };
 		A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59A97032B5C4639007E56E6 /* MainViewController.swift */; };
+		A5E3A4EF2B5DC9E9006D0313 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4EE2B5DC9E9006D0313 /* NetworkService.swift */; };
+		A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F12B5DCA2D006D0313 /* MarsPhotoModel.swift */; };
+		A5E3A4F42B5DCA50006D0313 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F32B5DCA50006D0313 /* NetworkError.swift */; };
+		A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */; };
+		A5E3A4F82B5DCAA4006D0313 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F72B5DCAA4006D0313 /* NetworkConfiguration.swift */; };
+		A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */; };
+		A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderElementView.swift; sourceTree = "<group>"; };
 		A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		A59A97032B5C4639007E56E6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A5E3A4EE2B5DC9E9006D0313 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A5E3A4F12B5DCA2D006D0313 /* MarsPhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsPhotoModel.swift; sourceTree = "<group>"; };
+		A5E3A4F32B5DCA50006D0313 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		A5E3A4F72B5DCAA4006D0313 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverType.swift; sourceTree = "<group>"; };
+		A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +88,15 @@
 		A53211872B5C08B300E8FB2A /* NASA */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A4F02B5DCA11006D0313 /* Models */,
+				A5E3A4ED2B5DC9B6006D0313 /* Network */,
 				A532119F2B5C139200E8FB2A /* SupportingFiles */,
 				A532119E2B5C137200E8FB2A /* Resources */,
 				A53211B02B5C1D2F00E8FB2A /* Splash */,
 				A58E1F0C2B5C542B00DF973E /* Main */,
 				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
+				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
+				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -128,8 +146,27 @@
 			children = (
 				A59A97032B5C4639007E56E6 /* MainViewController.swift */,
 				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
+				A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A5E3A4ED2B5DC9B6006D0313 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A4EE2B5DC9E9006D0313 /* NetworkService.swift */,
+				A5E3A4F32B5DCA50006D0313 /* NetworkError.swift */,
+				A5E3A4F72B5DCAA4006D0313 /* NetworkConfiguration.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A5E3A4F02B5DCA11006D0313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A4F12B5DCA2D006D0313 /* MarsPhotoModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,10 +276,17 @@
 			files = (
 				A532118D2B5C08B300E8FB2A /* SplashViewController.swift in Sources */,
 				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
+				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
+				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
+				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
+				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,
+				A5E3A4F42B5DCA50006D0313 /* NetworkError.swift in Sources */,
 				A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */,
+				A5E3A4F82B5DCAA4006D0313 /* NetworkConfiguration.swift in Sources */,
+				A5E3A4EF2B5DC9E9006D0313 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

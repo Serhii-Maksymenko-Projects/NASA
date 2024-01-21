@@ -6,22 +6,31 @@
 //
 
 import UIKit
+import RxSwift
 
 final class MainViewController: UIViewController {
-}
 
-extension MainViewController: UITableViewDataSource {
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var roverButton: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+    private let viewModel: MainViewModelProtocol = MainViewModel()
+    private let disposeBag = DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bind()
+        viewModel.fetchData(roverType: .curiosity)
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(
-                withIdentifier: "cardCell", for: indexPath
-            ) as? CardTableViewCell
-        else { return UITableViewCell() }
-        return cell
+    private func bind() {
+        viewModel.photos
+            .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
+                                         cellType: CardTableViewCell.self)) { _, item, cell in
+            cell.configureCell(marsPhoto: item)
+        }.disposed(by: disposeBag)
     }
-
 }
