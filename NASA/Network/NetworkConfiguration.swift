@@ -13,7 +13,7 @@ protocol NetworkConfigurationProtocol {
 
 class NetworkConfiguration: NetworkConfigurationProtocol {
 
-    private let apiKey = "DEMO_KEY"
+    private let apiKey = "RCUzwyfE16TMcGpmOle0hTBi9gep7ap6LJaICmif"
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-DD"

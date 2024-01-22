@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var roverLabel: UILabel!
@@ -17,5 +18,6 @@ final class CardTableViewCell: UITableViewCell {
         roverLabel.text = marsPhoto.roverName
         cameraLabel.text = marsPhoto.cameraName
         dateLabel.text = marsPhoto.dateString
+        photoImageView.sd_setImage(with: marsPhoto.photoUrl)
     }
 }
