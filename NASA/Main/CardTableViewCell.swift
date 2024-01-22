@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import RxSwift
 import SDWebImage
 
 final class CardTableViewCell: UITableViewCell {
-    @IBOutlet weak var roverLabel: UILabel!
-    @IBOutlet weak var cameraLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var roverLabel: CardLabel!
+    @IBOutlet weak var cameraLabel: CardLabel!
+    @IBOutlet weak var dateLabel: CardLabel!
     @IBOutlet weak var photoImageView: UIImageView!
 
-    func configureCell(marsPhoto: MarsPhotoModel) {
-        roverLabel.text = marsPhoto.roverName
-        cameraLabel.text = marsPhoto.cameraName
-        dateLabel.text = marsPhoto.dateString
-        photoImageView.sd_setImage(with: marsPhoto.photoUrl)
+    private let disposeBag = DisposeBag()
+    private var viewModel: CardCellViewModelProtocol?
+
+    func setViewModel(viewModel: CardCellViewModelProtocol) {
+        self.viewModel = viewModel
+        bind()
+    }
+
+    private func bind() {
+        viewModel?.roverName.bind(to: roverLabel.rx.text).disposed(by: disposeBag)
+        viewModel?.cameraName.bind(to: cameraLabel.rx.text).disposed(by: disposeBag)
+        viewModel?.dateName.bind(to: dateLabel.rx.text).disposed(by: disposeBag)
+        viewModel?.photoUrl.subscribe { [weak self] event in
+            self?.photoImageView.sd_setImage(with: event.element as? URL)
+        }.disposed(by: disposeBag)
     }
 }

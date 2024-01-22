@@ -27,14 +27,22 @@ final class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchData(roverType: .curiosity)
+        viewModel.fetchData(roverType: .spirit)
     }
 
     private func bind() {
         viewModel.photos
             .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
                                          cellType: CardTableViewCell.self)) { _, item, cell in
-            cell.configureCell(marsPhoto: item)
+                let cardViewModel = CardCellViewModel(marsPhoto: item)
+                cell.setViewModel(viewModel: cardViewModel)
+        }.disposed(by: disposeBag)
+
+        cameraButton.rx.tap.subscribe { _ in
+            self.viewModel.fetchData(roverType: .opportunity)
+        }.disposed(by: disposeBag)
+        roverButton.rx.tap.subscribe { _ in
+            self.viewModel.fetchData(roverType: .spirit)
         }.disposed(by: disposeBag)
     }
 }

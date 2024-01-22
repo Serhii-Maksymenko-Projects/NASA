@@ -30,6 +30,9 @@
 		A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */; };
 		A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */; };
 		A5E3A4FF2B5DE130006D0313 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A5E3A4FE2B5DE130006D0313 /* SDWebImage */; };
+		A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */; };
+		A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5022B5E94D5006D0313 /* CardLabel.swift */; };
+		A5E3A5052B5EAA54006D0313 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		A5E3A4F72B5DCAA4006D0313 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverType.swift; sourceTree = "<group>"; };
 		A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraType.swift; sourceTree = "<group>"; };
+		A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCellViewModel.swift; sourceTree = "<group>"; };
+		A5E3A5022B5E94D5006D0313 /* CardLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLabel.swift; sourceTree = "<group>"; };
+		A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,8 @@
 				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
 				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
 				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
+				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
+				A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 				A59A97032B5C4639007E56E6 /* MainViewController.swift */,
 				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
 				A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */,
+				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -278,13 +287,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E3A5052B5EAA54006D0313 /* UIFont + Extension.swift in Sources */,
 				A532118D2B5C08B300E8FB2A /* SplashViewController.swift in Sources */,
 				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
 				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
+				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
+				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
 				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,
 				A5E3A4F42B5DCA50006D0313 /* NetworkError.swift in Sources */,
