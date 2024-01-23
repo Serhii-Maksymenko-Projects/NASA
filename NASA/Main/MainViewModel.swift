@@ -13,14 +13,20 @@ protocol MainViewModelProtocol: AnyObject {
     var photos: PublishSubject<[MarsPhotoModel]> { get }
 
     func fetchData(roverType: RoverType)
+    func presentDetailPhoto()
 }
 
 class MainViewModel: MainViewModelProtocol {
 
+    private weak var coordinator: MainCoordinatorProtocol?
     var photos = PublishSubject<[MarsPhotoModel]>()
     private let service = NetworkService(session: URLSession.shared)
     private let config = NetworkConfiguration()
     private let disposeBag = DisposeBag()
+
+    init(coordinator: MainCoordinatorProtocol) {
+        self.coordinator = coordinator
+    }
 
     func fetchData(roverType: RoverType) {
         let urls = config.getUrls(roverType: roverType)
@@ -32,6 +38,10 @@ class MainViewModel: MainViewModelProtocol {
                 print("Error: \(error)")
             }
         }.disposed(by: disposeBag)
+    }
+
+    func presentDetailPhoto() {
+        coordinator?.presentDetailController()
     }
 
     private func mergeData(urls: [URL?]) -> Observable<[MarsPhotoModel]> {

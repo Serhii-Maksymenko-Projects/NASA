@@ -17,8 +17,17 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
-    private let viewModel: MainViewModelProtocol = MainViewModel()
+    private let viewModel: MainViewModelProtocol
     private let disposeBag = DisposeBag()
+
+    init?(coder: NSCoder, viewModel: MainViewModelProtocol) {
+        self.viewModel = viewModel
+        super.init(coder: coder)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,26 +47,8 @@ final class MainViewController: UIViewController {
                 cell.setViewModel(viewModel: cardViewModel)
         }.disposed(by: disposeBag)
 
-        cameraButton.rx.tap.subscribe { _ in
-            self.viewModel.fetchData(roverType: .opportunity)
-        }.disposed(by: disposeBag)
-        roverButton.rx.tap.subscribe { _ in
-            self.viewModel.fetchData(roverType: .spirit)
-        }.disposed(by: disposeBag)
-
-        tableView.rx.setDelegate(self).disposed(by: disposeBag)
-        tableView.rx.modelSelected(AnyObject.self).subscribe { event in
-            print("Tapped")
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(viewController, animated: true)
+        tableView.rx.modelSelected(Any.self).subscribe { [weak self] _ in
+            self?.viewModel.presentDetailPhoto()
         }.disposed(by: disposeBag)
     }
-}
-
-extension MainViewController: UIScrollViewDelegate, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
 }

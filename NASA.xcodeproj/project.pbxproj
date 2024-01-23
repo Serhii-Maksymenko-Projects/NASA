@@ -35,6 +35,12 @@
 		A5E3A5052B5EAA54006D0313 /* UIFont + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */; };
 		A5E3A5072B5EADE5006D0313 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5062B5EADE5006D0313 /* DetailViewController.swift */; };
 		A5E3A5092B60149F006D0313 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5082B60149F006D0313 /* DetailViewModel.swift */; };
+		A5E3A50B2B601B43006D0313 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A50A2B601B43006D0313 /* Coordinator.swift */; };
+		A5E3A50D2B601C07006D0313 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A50C2B601C07006D0313 /* BaseCoordinator.swift */; };
+		A5E3A5102B601C7B006D0313 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A50F2B601C7B006D0313 /* AppCoordinator.swift */; };
+		A5E3A5122B601D4C006D0313 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */; };
+		A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5142B602376006D0313 /* DetailCoordinator.swift */; };
+		A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +71,12 @@
 		A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Extension.swift"; sourceTree = "<group>"; };
 		A5E3A5062B5EADE5006D0313 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A5E3A5082B60149F006D0313 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A5E3A50A2B601B43006D0313 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A5E3A50C2B601C07006D0313 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		A5E3A50F2B601C7B006D0313 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		A5E3A5142B602376006D0313 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
+		A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +123,8 @@
 				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
 				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
 				A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */,
-				A5E3A5062B5EADE5006D0313 /* DetailViewController.swift */,
-				A5E3A5082B60149F006D0313 /* DetailViewModel.swift */,
+				A5E3A5132B60234B006D0313 /* Detail */,
+				A5E3A50E2B601C56006D0313 /* Coordinator */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -153,6 +165,7 @@
 			children = (
 				A532118C2B5C08B300E8FB2A /* SplashViewController.swift */,
 				A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */,
+				A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
 				A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */,
 				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
+				A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -184,6 +198,26 @@
 				A5E3A4F12B5DCA2D006D0313 /* MarsPhotoModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A5E3A50E2B601C56006D0313 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A50A2B601B43006D0313 /* Coordinator.swift */,
+				A5E3A50C2B601C07006D0313 /* BaseCoordinator.swift */,
+				A5E3A50F2B601C7B006D0313 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		A5E3A5132B60234B006D0313 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5062B5EADE5006D0313 /* DetailViewController.swift */,
+				A5E3A5082B60149F006D0313 /* DetailViewModel.swift */,
+				A5E3A5142B602376006D0313 /* DetailCoordinator.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,17 +333,23 @@
 				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
 				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
+				A5E3A5102B601C7B006D0313 /* AppCoordinator.swift in Sources */,
+				A5E3A50B2B601B43006D0313 /* Coordinator.swift in Sources */,
 				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
+				A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
+				A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
 				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
 				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,
 				A5E3A5092B60149F006D0313 /* DetailViewModel.swift in Sources */,
+				A5E3A50D2B601C07006D0313 /* BaseCoordinator.swift in Sources */,
 				A5E3A4F42B5DCA50006D0313 /* NetworkError.swift in Sources */,
 				A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */,
 				A5E3A4F82B5DCAA4006D0313 /* NetworkConfiguration.swift in Sources */,
+				A5E3A5122B601D4C006D0313 /* MainCoordinator.swift in Sources */,
 				A5E3A4EF2B5DC9E9006D0313 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +508,6 @@
 				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -502,7 +541,6 @@
 				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

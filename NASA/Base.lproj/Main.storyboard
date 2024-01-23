@@ -88,7 +88,7 @@
         <!--Main View Controller-->
         <scene sceneID="98L-oG-ELK">
             <objects>
-                <viewController id="UwD-et-Cwq" customClass="MainViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="UwD-et-Cwq" customClass="MainViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="768-RW-agc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

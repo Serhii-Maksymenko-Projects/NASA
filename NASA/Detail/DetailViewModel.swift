@@ -12,7 +12,14 @@ protocol DetailViewModelProtocol: AnyObject {
 }
 
 final class DetailViewModel: DetailViewModelProtocol {
+
+    private weak var coordinator: DetailCoordinator?
+
+    init(coordinator: DetailCoordinator? = nil) {
+        self.coordinator = coordinator
+    }
+
     func dismiss() {
-        
+        coordinator?.dismiss()
     }
 }
