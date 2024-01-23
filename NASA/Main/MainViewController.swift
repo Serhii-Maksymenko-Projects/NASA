@@ -44,5 +44,20 @@ final class MainViewController: UIViewController {
         roverButton.rx.tap.subscribe { _ in
             self.viewModel.fetchData(roverType: .spirit)
         }.disposed(by: disposeBag)
+
+        tableView.rx.setDelegate(self).disposed(by: disposeBag)
+        tableView.rx.modelSelected(AnyObject.self).subscribe { event in
+            print("Tapped")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+            viewController.modalPresentationStyle = .fullScreen
+            self.present(viewController, animated: true)
+        }.disposed(by: disposeBag)
     }
+}
+
+extension MainViewController: UIScrollViewDelegate, UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 }

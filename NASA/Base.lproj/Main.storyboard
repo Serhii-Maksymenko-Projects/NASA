@@ -314,6 +314,48 @@
             </objects>
             <point key="canvasLocation" x="1107.6335877862596" y="-2.1126760563380285"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="lZO-TE-oHM">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="aak-AF-DhI" customClass="DetailViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TTi-er-VBv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_photo" translatesAutoresizingMaskIntoConstraints="NO" id="9m0-9l-1dM">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" name="layerOne"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsW-ij-5WB">
+                                <rect key="frame" x="20" y="73" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lhv-vL-6mk"/>
+                                    <constraint firstAttribute="width" constant="44" id="yK2-jC-nat"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="close_light" title=" "/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ouz-Pn-azD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ouz-Pn-azD" firstAttribute="trailing" secondItem="9m0-9l-1dM" secondAttribute="trailing" id="4Av-1B-9Zl"/>
+                            <constraint firstItem="Ouz-Pn-azD" firstAttribute="top" secondItem="9m0-9l-1dM" secondAttribute="top" constant="59" id="GVr-13-Akg"/>
+                            <constraint firstItem="LsW-ij-5WB" firstAttribute="leading" secondItem="Ouz-Pn-azD" secondAttribute="leading" constant="20" id="XRi-BU-6Rb"/>
+                            <constraint firstItem="LsW-ij-5WB" firstAttribute="top" secondItem="Ouz-Pn-azD" secondAttribute="top" constant="14" id="bQD-YT-15p"/>
+                            <constraint firstItem="9m0-9l-1dM" firstAttribute="bottom" secondItem="Ouz-Pn-azD" secondAttribute="bottom" constant="34" id="hMg-eY-YOb"/>
+                            <constraint firstItem="9m0-9l-1dM" firstAttribute="leading" secondItem="Ouz-Pn-azD" secondAttribute="leading" id="wQh-Zs-XLG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="LsW-ij-5WB" id="Bv9-Dd-y1R"/>
+                        <outlet property="photoImageView" destination="9m0-9l-1dM" id="mTJ-Fo-srz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXe-a2-LYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2055.7251908396947" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="6ao-cj-xzx">
@@ -329,6 +371,7 @@
     <resources>
         <image name="calendar" width="44" height="44"/>
         <image name="camera" width="24" height="24"/>
+        <image name="close_light" width="44" height="44"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rover" width="24" height="24"/>
         <image name="save" width="12" height="12"/>
