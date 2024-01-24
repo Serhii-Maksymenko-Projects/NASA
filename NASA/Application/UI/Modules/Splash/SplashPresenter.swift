@@ -34,10 +34,12 @@ final class SplashPresenter: SplashPresenterDescription {
     }
 
     func dismiss(completion: @escaping () -> Void?) {
-        UIView.animate(withDuration: 0.5) { [weak self] in
-            self?.foregroundSplashWindow.alpha = 0
-        } completion: { _ in
-            completion()
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5) { [weak self] in
+                self?.foregroundSplashWindow.alpha = 0
+            } completion: { _ in
+                completion()
+            }
         }
     }
 

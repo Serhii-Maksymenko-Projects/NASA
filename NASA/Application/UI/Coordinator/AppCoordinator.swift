@@ -24,21 +24,25 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     override func present() {
-        let mainViewControllerCoordinator = MainCoordinator(navigationController: navigationController)
-        add(coordinator: mainViewControllerCoordinator)
-        mainViewControllerCoordinator.present()
+        let mainCoordinator = MainCoordinator(navigationController: navigationController,
+                                              loadedCompletionHandler: hideSplashViewController)
+        add(coordinator: mainCoordinator)
+        mainCoordinator.present()
         guard let windowScene = window.windowScene else { return }
+        presentSplashViewController(scene: windowScene)
+    }
+
+    private func presentSplashViewController(scene: UIWindowScene) {
         let storyboard = UIStoryboard(name: "Splash", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "SplashViewController")
-        splashPresenter = SplashPresenter(scene: windowScene, viewController: viewController)
+        splashPresenter = SplashPresenter(scene: scene, viewController: viewController)
         splashPresenter?.present()
+    }
 
-        // TODO: Logit to hide SplashScreen
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            self?.splashPresenter?.dismiss(completion: {
-                self?.splashPresenter = nil
-            })
-        }
+    private func hideSplashViewController() {
+        splashPresenter?.dismiss(completion: {
+            self.splashPresenter = nil
+        })
     }
 
 }

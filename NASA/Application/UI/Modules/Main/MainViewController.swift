@@ -40,7 +40,6 @@ final class MainViewController: UIViewController {
     }
 
     private func bind() {
-
         viewModel.photos
             .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
                                          cellType: CardTableViewCell.self)) { _, item, cell in

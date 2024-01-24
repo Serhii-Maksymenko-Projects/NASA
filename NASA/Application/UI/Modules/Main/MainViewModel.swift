@@ -37,6 +37,7 @@ class MainViewModel: MainViewModelProtocol {
             if let error = event.error {
                 print("Error: \(error)")
             }
+            self?.coordinator?.mainViewControllerDidLoaded()
         }.disposed(by: disposeBag)
     }
 

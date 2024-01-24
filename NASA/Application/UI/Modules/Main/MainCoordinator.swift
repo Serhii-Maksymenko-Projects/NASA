@@ -10,14 +10,17 @@ import UIKit
 protocol MainCoordinatorProtocol: Coordinator {
     func presentDetailController(photoUrl: URL)
     func presentHistoryController()
+    func mainViewControllerDidLoaded()
 }
 
 final class MainCoordinator: BaseCoordinator {
 
     private let navigationController: UINavigationController
+    private var loadedCompletionHandler: (() -> Void)?
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, loadedCompletionHandler: (() -> Void)?) {
         self.navigationController = navigationController
+        self.loadedCompletionHandler = loadedCompletionHandler
     }
 
     override func present() {
@@ -43,4 +46,9 @@ extension MainCoordinator: MainCoordinatorProtocol {
         // TODO: - Present History Controller
     }
 
+    func mainViewControllerDidLoaded() {
+        guard let completion = loadedCompletionHandler else { return }
+        completion()
+        loadedCompletionHandler = nil
+    }
 }
