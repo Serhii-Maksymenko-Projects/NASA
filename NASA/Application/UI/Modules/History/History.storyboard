@@ -27,16 +27,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQi-V6-ZRY">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="134.66666666666666"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="135.66666666666666"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3b-vQ-Gze">
-                                        <rect key="frame" x="142.66666666666666" y="75" width="107.66666666666666" height="39.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3b-vQ-Gze">
+                                        <rect key="frame" x="76" y="75" width="241" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="34"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt7-Vs-7hf">
-                                        <rect key="frame" x="20" y="70.666666666666671" width="44" height="44"/>
+                                        <rect key="frame" x="20" y="71.666666666666671" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="DGB-Mh-Uki"/>
                                             <constraint firstAttribute="height" constant="44" id="gbt-z7-TbA"/>
@@ -47,10 +47,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="accentOne"/>
                                 <constraints>
+                                    <constraint firstItem="Y3b-vQ-Gze" firstAttribute="leading" secondItem="JQi-V6-ZRY" secondAttribute="leading" constant="76" id="B71-Rz-Fbj"/>
                                     <constraint firstItem="Wt7-Vs-7hf" firstAttribute="leading" secondItem="JQi-V6-ZRY" secondAttribute="leading" constant="20" id="DUl-uN-wwl"/>
                                     <constraint firstAttribute="bottom" secondItem="Wt7-Vs-7hf" secondAttribute="bottom" constant="20" id="dLl-eq-Qdu"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y3b-vQ-Gze" secondAttribute="trailing" constant="76" id="p6U-C1-qjD"/>
                                     <constraint firstAttribute="bottom" secondItem="Y3b-vQ-Gze" secondAttribute="bottom" constant="20" id="tOy-Zf-CnO"/>
-                                    <constraint firstItem="Y3b-vQ-Gze" firstAttribute="centerX" secondItem="JQi-V6-ZRY" secondAttribute="centerX" id="wWG-QO-QZv"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yq-KJ-ahj">
@@ -73,7 +74,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browsing history is empty." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvZ-tw-aMV">
-                                        <rect key="frame" x="2.6666666666666714" y="167.33333333333331" width="188" height="18.666666666666657"/>
+                                        <rect key="frame" x="-2.3333333333333286" y="167.33333333333331" width="197.66666666666663" height="18.666666666666657"/>
                                         <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                         <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
