@@ -43,7 +43,9 @@ extension MainCoordinator: MainCoordinatorProtocol {
     }
 
     func presentHistoryController() {
-        // TODO: - Present History Controller
+        let historyCoordinator = HistoryCoordinator(navigationController: navigationController)
+        add(coordinator: historyCoordinator)
+        historyCoordinator.present()
     }
 
     func mainViewControllerDidLoaded() {

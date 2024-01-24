@@ -52,5 +52,9 @@ final class MainViewController: UIViewController {
             guard let url = event.element?.photoUrl else { return }
             self?.viewModel.presentDetailPhoto(photoUrl: url)
         }.disposed(by: disposeBag)
+        
+        historyButton.rx.tap.subscribe { [weak self] _ in
+            self?.viewModel.presentHistory()
+        }.disposed(by: disposeBag)
     }
 }

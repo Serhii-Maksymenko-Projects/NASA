@@ -14,6 +14,7 @@ protocol MainViewModelProtocol: AnyObject {
 
     func fetchData(roverType: RoverType)
     func presentDetailPhoto(photoUrl: URL)
+    func presentHistory()
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -43,6 +44,10 @@ class MainViewModel: MainViewModelProtocol {
 
     func presentDetailPhoto(photoUrl: URL) {
         coordinator?.presentDetailController(photoUrl: photoUrl)
+    }
+    
+    func presentHistory() {
+        coordinator?.presentHistoryController()
     }
 
     private func mergeData(urls: [URL?]) -> Observable<[MarsPhotoModel]> {

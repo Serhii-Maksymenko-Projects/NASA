@@ -42,6 +42,11 @@
 		A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */; };
 		A5E3A5212B6095D5006D0313 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3A5202B6095D5006D0313 /* Splash.storyboard */; };
 		A5E3A5232B609603006D0313 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3A5222B609603006D0313 /* Detail.storyboard */; };
+		A5E3A5262B6146E2006D0313 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3A5252B6146E2006D0313 /* History.storyboard */; };
+		A5E3A5282B6146EF006D0313 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5272B6146EF006D0313 /* HistoryViewController.swift */; };
+		A5E3A52A2B614724006D0313 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5292B614724006D0313 /* HistoryViewModel.swift */; };
+		A5E3A52C2B614731006D0313 /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A52B2B614731006D0313 /* HistoryCoordinator.swift */; };
+		A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +84,11 @@
 		A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
 		A5E3A5202B6095D5006D0313 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		A5E3A5222B609603006D0313 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		A5E3A5252B6146E2006D0313 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
+		A5E3A5272B6146EF006D0313 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A5E3A5292B614724006D0313 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		A5E3A52B2B614731006D0313 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
+		A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +226,7 @@
 		A5E3A5182B608F43006D0313 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5242B6146D5006D0313 /* History */,
 				A53211B02B5C1D2F00E8FB2A /* Splash */,
 				A58E1F0C2B5C542B00DF973E /* Main */,
 				A5E3A5132B60234B006D0313 /* Detail */,
@@ -285,6 +296,18 @@
 				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		A5E3A5242B6146D5006D0313 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5252B6146E2006D0313 /* History.storyboard */,
+				A5E3A5272B6146EF006D0313 /* HistoryViewController.swift */,
+				A5E3A5292B614724006D0313 /* HistoryViewModel.swift */,
+				A5E3A52B2B614731006D0313 /* HistoryCoordinator.swift */,
+				A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +386,7 @@
 				A53211922B5C08B600E8FB2A /* Assets.xcassets in Resources */,
 				A53211902B5C08B300E8FB2A /* Main.storyboard in Resources */,
 				A53211A82B5C168200E8FB2A /* Icons.xcassets in Resources */,
+				A5E3A5262B6146E2006D0313 /* History.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +421,7 @@
 			files = (
 				A5E3A5052B5EAA54006D0313 /* UIFont + Extension.swift in Sources */,
 				A5E3A5072B5EADE5006D0313 /* DetailViewController.swift in Sources */,
+				A5E3A52C2B614731006D0313 /* HistoryCoordinator.swift in Sources */,
 				A532118D2B5C08B300E8FB2A /* SplashViewController.swift in Sources */,
 				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
 				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
@@ -406,9 +431,12 @@
 				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
 				A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
+				A5E3A52A2B614724006D0313 /* HistoryViewModel.swift in Sources */,
 				A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
+				A5E3A5282B6146EF006D0313 /* HistoryViewController.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
+				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
 				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
 				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,

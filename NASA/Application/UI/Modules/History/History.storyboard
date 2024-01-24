@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--History View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HistoryViewController" id="Y6W-OH-hqX" customClass="HistoryViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JQi-V6-ZRY">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="134.66666666666666"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3b-vQ-Gze">
+                                        <rect key="frame" x="142.66666666666666" y="75" width="107.66666666666666" height="39.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt7-Vs-7hf">
+                                        <rect key="frame" x="20" y="70.666666666666671" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="DGB-Mh-Uki"/>
+                                            <constraint firstAttribute="height" constant="44" id="gbt-z7-TbA"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="back" title=" "/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="accentOne"/>
+                                <constraints>
+                                    <constraint firstItem="Wt7-Vs-7hf" firstAttribute="leading" secondItem="JQi-V6-ZRY" secondAttribute="leading" constant="20" id="DUl-uN-wwl"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wt7-Vs-7hf" secondAttribute="bottom" constant="20" id="dLl-eq-Qdu"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y3b-vQ-Gze" secondAttribute="bottom" constant="20" id="tOy-Zf-CnO"/>
+                                    <constraint firstItem="Y3b-vQ-Gze" firstAttribute="centerX" secondItem="JQi-V6-ZRY" secondAttribute="centerX" id="wWG-QO-QZv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yq-KJ-ahj">
+                                <rect key="frame" x="100" y="345.66666666666669" width="193" height="186.00000000000006"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhm-bU-wP8" customClass="EmptyLogoView" customModule="NASA" customModuleProvider="target">
+                                        <rect key="frame" x="13.666666666666671" y="0.0" width="166" height="166"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="166" id="Cc6-Lh-01R"/>
+                                            <constraint firstAttribute="height" constant="166" id="TfA-eg-613"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                                <color key="value" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                                <color key="value" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Browsing history is empty." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvZ-tw-aMV">
+                                        <rect key="frame" x="2.6666666666666714" y="167.33333333333331" width="188" height="18.666666666666657"/>
+                                        <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                        <color key="textColor" red="0.62745098039215685" green="0.62745098039215685" blue="0.62745098039215685" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="Lmm-qL-hbX"/>
+                                    <constraint firstAttribute="bottom" secondItem="bvZ-tw-aMV" secondAttribute="bottom" id="SKp-p0-5hm"/>
+                                    <constraint firstItem="bvZ-tw-aMV" firstAttribute="centerX" secondItem="3yq-KJ-ahj" secondAttribute="centerX" id="aGU-cs-07i"/>
+                                    <constraint firstItem="Bhm-bU-wP8" firstAttribute="top" secondItem="3yq-KJ-ahj" secondAttribute="top" id="lLJ-UO-qSP"/>
+                                    <constraint firstItem="Bhm-bU-wP8" firstAttribute="centerX" secondItem="3yq-KJ-ahj" secondAttribute="centerX" id="oKr-Dg-6Yf"/>
+                                    <constraint firstAttribute="height" constant="186" id="scK-G4-z4v"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y3b-vQ-Gze" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="HPQ-f9-5XX"/>
+                            <constraint firstItem="3yq-KJ-ahj" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="chh-nI-800"/>
+                            <constraint firstItem="3yq-KJ-ahj" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="dpa-ij-daH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JQi-V6-ZRY" secondAttribute="trailing" id="j24-R4-ZiI"/>
+                            <constraint firstItem="JQi-V6-ZRY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lXT-7N-L11"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="JQi-V6-ZRY" secondAttribute="top" constant="59" id="pGa-cK-oFl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="Wt7-Vs-7hf" id="kVm-Vg-gE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="44" height="44"/>
+        <namedColor name="accentOne">
+            <color red="1" green="0.41200000047683716" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
