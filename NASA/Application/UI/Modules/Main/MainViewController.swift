@@ -15,6 +15,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var roverButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
     private let viewModel: MainViewModelProtocol
