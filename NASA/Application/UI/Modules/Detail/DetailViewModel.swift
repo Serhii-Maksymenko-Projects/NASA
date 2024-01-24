@@ -8,15 +8,18 @@
 import UIKit
 
 protocol DetailViewModelProtocol: AnyObject {
+    var photoUrl: URL { get }
     func dismiss()
 }
 
 final class DetailViewModel: DetailViewModelProtocol {
 
     private weak var coordinator: DetailCoordinator?
+    let photoUrl: URL
 
-    init(coordinator: DetailCoordinator? = nil) {
+    init(coordinator: DetailCoordinator, photoUrl: URL) {
         self.coordinator = coordinator
+        self.photoUrl = photoUrl
     }
 
     func dismiss() {

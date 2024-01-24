@@ -13,7 +13,7 @@ protocol MainViewModelProtocol: AnyObject {
     var photos: PublishSubject<[MarsPhotoModel]> { get }
 
     func fetchData(roverType: RoverType)
-    func presentDetailPhoto()
+    func presentDetailPhoto(photoUrl: URL)
 }
 
 class MainViewModel: MainViewModelProtocol {
@@ -40,8 +40,8 @@ class MainViewModel: MainViewModelProtocol {
         }.disposed(by: disposeBag)
     }
 
-    func presentDetailPhoto() {
-        coordinator?.presentDetailController()
+    func presentDetailPhoto(photoUrl: URL) {
+        coordinator?.presentDetailController(photoUrl: photoUrl)
     }
 
     private func mergeData(urls: [URL?]) -> Observable<[MarsPhotoModel]> {

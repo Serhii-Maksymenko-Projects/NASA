@@ -28,6 +28,7 @@ final class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        photoImageView.sd_setImage(with: viewModel.photoUrl)
         bind()
     }
 

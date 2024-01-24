@@ -40,6 +40,7 @@ final class MainViewController: UIViewController {
     }
 
     private func bind() {
+
         viewModel.photos
             .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
                                          cellType: CardTableViewCell.self)) { _, item, cell in
@@ -47,8 +48,9 @@ final class MainViewController: UIViewController {
                 cell.setViewModel(viewModel: cardViewModel)
         }.disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(Any.self).subscribe { [weak self] _ in
-            self?.viewModel.presentDetailPhoto()
+        tableView.rx.modelSelected(MarsPhotoModel.self).subscribe { [weak self] event in
+            guard let url = event.element?.photoUrl else { return }
+            self?.viewModel.presentDetailPhoto(photoUrl: url)
         }.disposed(by: disposeBag)
     }
 }

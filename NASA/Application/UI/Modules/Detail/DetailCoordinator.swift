@@ -10,14 +10,16 @@ import UIKit
 final class DetailCoordinator: BaseCoordinator {
 
     private let navigationController: UINavigationController
+    private let photoUrl: URL
 
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, photoUrl: URL) {
         self.navigationController = navigationController
+        self.photoUrl = photoUrl
     }
 
     override func present() {
         let storyboard = UIStoryboard(name: "Detail", bundle: nil)
-        let viewModel = DetailViewModel(coordinator: self)
+        let viewModel = DetailViewModel(coordinator: self, photoUrl: photoUrl)
         let viewController = storyboard.instantiateViewController(identifier: "DetailViewController") { coder in
             return DetailViewController(coder: coder, viewModel: viewModel)
         }

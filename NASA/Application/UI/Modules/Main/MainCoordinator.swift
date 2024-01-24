@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainCoordinatorProtocol: Coordinator {
-    func presentDetailController()
+    func presentDetailController(photoUrl: URL)
     func presentHistoryController()
 }
 
@@ -33,8 +33,8 @@ final class MainCoordinator: BaseCoordinator {
 
 extension MainCoordinator: MainCoordinatorProtocol {
 
-    func presentDetailController() {
-        let detailCoordinator = DetailCoordinator(navigationController: navigationController)
+    func presentDetailController(photoUrl: URL) {
+        let detailCoordinator = DetailCoordinator(navigationController: navigationController, photoUrl: photoUrl)
         add(coordinator: detailCoordinator)
         detailCoordinator.present()
     }
