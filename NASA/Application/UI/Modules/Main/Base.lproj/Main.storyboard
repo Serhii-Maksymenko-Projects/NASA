@@ -18,73 +18,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Splash View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tiw-58-Whn">
-                                <rect key="frame" x="135" y="377" width="123" height="123"/>
-                                <color key="backgroundColor" name="accentOne"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="Wjq-ZA-QE8"/>
-                                    <constraint firstAttribute="width" constant="123" id="mT5-bF-anh"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EzB-6j-Ofs">
-                                <rect key="frame" x="141" y="670" width="111" height="34"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flb-75-BUP" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="27.666666666666668" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv7-jo-Arh" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
-                                        <rect key="frame" x="27.666666666666657" y="0.0" width="28" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5l-ze-exx" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
-                                        <rect key="frame" x="55.66666666666665" y="0.0" width="27.666666666666664" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-EY-eft" customClass="LoaderElementView" customModule="NASA" customModuleProvider="target">
-                                        <rect key="frame" x="83.333333333333343" y="0.0" width="27.666666666666671" height="34"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ZqF-br-d4z"/>
-                                    <constraint firstAttribute="width" constant="111" id="kzq-uy-MPc"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Tiw-58-Whn" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="AwW-oZ-qa8"/>
-                            <constraint firstItem="Tiw-58-Whn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Gxu-Sa-ntD"/>
-                            <constraint firstItem="EzB-6j-Ofs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="aCh-XZ-ory"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EzB-6j-Ofs" secondAttribute="bottom" constant="114" id="laJ-K9-W2j"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="firstLoaderElement" destination="flb-75-BUP" id="bt8-1w-Ojg"/>
-                        <outlet property="lastLoaderElement" destination="cn3-EY-eft" id="kh3-tD-6LA"/>
-                        <outlet property="secondLoaderElement" destination="Vv7-jo-Arh" id="DBU-XK-qJR"/>
-                        <outlet property="thirdLoaderElement" destination="b5l-ze-exx" id="Cup-UP-ApJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="58" y="-2"/>
-        </scene>
         <!--Main View Controller-->
         <scene sceneID="98L-oG-ELK">
             <objects>
@@ -94,19 +27,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dl-4i-Kgd">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="196.33333333333334"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="195.33333333333334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BN5-hb-gea" userLabel="labelsStackView">
-                                        <rect key="frame" x="20" y="61" width="295" height="57.333333333333343"/>
+                                        <rect key="frame" x="20" y="61" width="295" height="56.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARS.CAMERA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdd-l4-83t">
-                                                <rect key="frame" x="0.0" y="0.0" width="295" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="295" height="36.333333333333336"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="31"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 6, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hMh-1b-kve">
-                                                <rect key="frame" x="0.0" y="37" width="295" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="36.333333333333329" width="295" height="20"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -114,7 +47,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbF-TK-hfu">
-                                        <rect key="frame" x="335" y="138.33333333333334" width="38" height="38"/>
+                                        <rect key="frame" x="335" y="137.33333333333334" width="38" height="38"/>
                                         <color key="backgroundColor" name="backgroundOne"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="dJr-zb-HSX"/>
@@ -135,7 +68,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RXh-Z6-NUz">
-                                        <rect key="frame" x="20" y="138.33333333333334" width="295" height="38"/>
+                                        <rect key="frame" x="20" y="137.33333333333334" width="295" height="38"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsQ-Qk-qDs">
                                                 <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="38"/>
@@ -166,7 +99,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-G0-bNQ">
-                                        <rect key="frame" x="317.66666666666669" y="60.666666666666657" width="72.666666666666686" height="58"/>
+                                        <rect key="frame" x="317.66666666666669" y="60.333333333333343" width="72.666666666666686" height="58"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="calendar" title=" "/>
                                     </button>
@@ -187,7 +120,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="162" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lsr-UT-m3p">
-                                <rect key="frame" x="0.0" y="196.33333333333331" width="393" height="655.66666666666674"/>
+                                <rect key="frame" x="0.0" y="195.33333333333331" width="393" height="656.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cardCell" id="Eer-3g-K0g" customClass="CardTableViewCell" customModule="NASA" customModuleProvider="target">
@@ -314,64 +247,21 @@
             </objects>
             <point key="canvasLocation" x="1107.6335877862596" y="-2.1126760563380285"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="lZO-TE-oHM">
-            <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="aak-AF-DhI" customClass="DetailViewController" customModule="NASA" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TTi-er-VBv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_photo" translatesAutoresizingMaskIntoConstraints="NO" id="9m0-9l-1dM">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                <color key="backgroundColor" name="layerOne"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsW-ij-5WB">
-                                <rect key="frame" x="20" y="73" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="lhv-vL-6mk"/>
-                                    <constraint firstAttribute="width" constant="44" id="yK2-jC-nat"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="close_light" title=" "/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ouz-Pn-azD"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Ouz-Pn-azD" firstAttribute="trailing" secondItem="9m0-9l-1dM" secondAttribute="trailing" id="4Av-1B-9Zl"/>
-                            <constraint firstItem="Ouz-Pn-azD" firstAttribute="top" secondItem="9m0-9l-1dM" secondAttribute="top" constant="59" id="GVr-13-Akg"/>
-                            <constraint firstItem="LsW-ij-5WB" firstAttribute="leading" secondItem="Ouz-Pn-azD" secondAttribute="leading" constant="20" id="XRi-BU-6Rb"/>
-                            <constraint firstItem="LsW-ij-5WB" firstAttribute="top" secondItem="Ouz-Pn-azD" secondAttribute="top" constant="14" id="bQD-YT-15p"/>
-                            <constraint firstItem="9m0-9l-1dM" firstAttribute="bottom" secondItem="Ouz-Pn-azD" secondAttribute="bottom" constant="34" id="hMg-eY-YOb"/>
-                            <constraint firstItem="9m0-9l-1dM" firstAttribute="leading" secondItem="Ouz-Pn-azD" secondAttribute="leading" id="wQh-Zs-XLG"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="closeButton" destination="LsW-ij-5WB" id="Bv9-Dd-y1R"/>
-                        <outlet property="photoImageView" destination="9m0-9l-1dM" id="mTJ-Fo-srz"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vXe-a2-LYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2055.7251908396947" y="-2.1126760563380285"/>
-        </scene>
     </scenes>
     <designables>
         <designable name="6ao-cj-xzx">
-            <size key="intrinsicContentSize" width="67.666666666666671" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="65.666666666666671" height="19.333333333333332"/>
         </designable>
         <designable name="Huw-L6-iCm">
-            <size key="intrinsicContentSize" width="43.333333333333336" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="41.666666666666664" height="19.333333333333332"/>
         </designable>
         <designable name="jft-k3-02E">
-            <size key="intrinsicContentSize" width="51.666666666666664" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="49.666666666666664" height="19.333333333333332"/>
         </designable>
     </designables>
     <resources>
         <image name="calendar" width="44" height="44"/>
         <image name="camera" width="24" height="24"/>
-        <image name="close_light" width="44" height="44"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rover" width="24" height="24"/>
         <image name="save" width="12" height="12"/>

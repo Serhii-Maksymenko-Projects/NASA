@@ -41,6 +41,8 @@
 		A5E3A5122B601D4C006D0313 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */; };
 		A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5142B602376006D0313 /* DetailCoordinator.swift */; };
 		A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */; };
+		A5E3A5212B6095D5006D0313 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3A5202B6095D5006D0313 /* Splash.storyboard */; };
+		A5E3A5232B609603006D0313 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5E3A5222B609603006D0313 /* Detail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		A5E3A5142B602376006D0313 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		A5E3A5202B6095D5006D0313 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		A5E3A5222B609603006D0313 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,19 +116,10 @@
 		A53211872B5C08B300E8FB2A /* NASA */ = {
 			isa = PBXGroup;
 			children = (
-				A5E3A4F02B5DCA11006D0313 /* Models */,
-				A5E3A4ED2B5DC9B6006D0313 /* Network */,
+				A5E3A51C2B609307006D0313 /* Application */,
 				A532119F2B5C139200E8FB2A /* SupportingFiles */,
 				A532119E2B5C137200E8FB2A /* Resources */,
-				A53211B02B5C1D2F00E8FB2A /* Splash */,
-				A58E1F0C2B5C542B00DF973E /* Main */,
-				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
-				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
-				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
-				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
-				A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */,
-				A5E3A5132B60234B006D0313 /* Detail */,
-				A5E3A50E2B601C56006D0313 /* Coordinator */,
+				A5E3A5192B6092BC006D0313 /* Common */,
 			);
 			path = NASA;
 			sourceTree = "<group>";
@@ -163,6 +158,7 @@
 		A53211B02B5C1D2F00E8FB2A /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5202B6095D5006D0313 /* Splash.storyboard */,
 				A532118C2B5C08B300E8FB2A /* SplashViewController.swift */,
 				A53211AE2B5C186100E8FB2A /* LoaderElementView.swift */,
 				A5E3A5162B6054F3006D0313 /* SplashPresenter.swift */,
@@ -173,8 +169,8 @@
 		A58E1F0C2B5C542B00DF973E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
 				A59A97032B5C4639007E56E6 /* MainViewController.swift */,
-				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
 				A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */,
 				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
 				A5E3A5112B601D4C006D0313 /* MainCoordinator.swift */,
@@ -213,11 +209,85 @@
 		A5E3A5132B60234B006D0313 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5222B609603006D0313 /* Detail.storyboard */,
 				A5E3A5062B5EADE5006D0313 /* DetailViewController.swift */,
 				A5E3A5082B60149F006D0313 /* DetailViewModel.swift */,
 				A5E3A5142B602376006D0313 /* DetailCoordinator.swift */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		A5E3A5182B608F43006D0313 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A53211B02B5C1D2F00E8FB2A /* Splash */,
+				A58E1F0C2B5C542B00DF973E /* Main */,
+				A5E3A5132B60234B006D0313 /* Detail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A5E3A5192B6092BC006D0313 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A51B2B6092DF006D0313 /* Enums */,
+				A5E3A51A2B6092D2006D0313 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A5E3A51A2B6092D2006D0313 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5E3A51B2B6092DF006D0313 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
+				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		A5E3A51C2B609307006D0313 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A51D2B609310006D0313 /* UI */,
+				A5E3A51E2B609324006D0313 /* BusinessLogic */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A5E3A51D2B609310006D0313 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5182B608F43006D0313 /* Modules */,
+				A5E3A50E2B601C56006D0313 /* Coordinator */,
+				A5E3A51F2B609345006D0313 /* Elements */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A5E3A51E2B609324006D0313 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A4ED2B5DC9B6006D0313 /* Network */,
+				A5E3A4F02B5DCA11006D0313 /* Models */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		A5E3A51F2B609345006D0313 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
+				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +360,9 @@
 			files = (
 				A53211AC2B5C170300E8FB2A /* SF-Pro-Text-Regular.otf in Resources */,
 				A53211AD2B5C170300E8FB2A /* SF-Pro-Text-Bold.otf in Resources */,
+				A5E3A5232B609603006D0313 /* Detail.storyboard in Resources */,
 				A53211952B5C08B600E8FB2A /* LaunchScreen.storyboard in Resources */,
+				A5E3A5212B6095D5006D0313 /* Splash.storyboard in Resources */,
 				A53211A62B5C153100E8FB2A /* Colors.xcassets in Resources */,
 				A53211922B5C08B600E8FB2A /* Assets.xcassets in Resources */,
 				A53211902B5C08B300E8FB2A /* Main.storyboard in Resources */,

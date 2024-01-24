@@ -16,8 +16,7 @@ final class DetailCoordinator: BaseCoordinator {
     }
 
     override func present() {
-        print("DetailCoordinator present()")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
         let viewModel = DetailViewModel(coordinator: self)
         let viewController = storyboard.instantiateViewController(identifier: "DetailViewController") { coder in
             return DetailViewController(coder: coder, viewModel: viewModel)

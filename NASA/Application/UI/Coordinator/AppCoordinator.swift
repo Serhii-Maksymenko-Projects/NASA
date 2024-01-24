@@ -28,7 +28,7 @@ final class AppCoordinator: BaseCoordinator {
         add(coordinator: mainViewControllerCoordinator)
         mainViewControllerCoordinator.present()
         guard let windowScene = window.windowScene else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Splash", bundle: nil)
         let viewController = storyboard.instantiateViewController(identifier: "SplashViewController")
         splashPresenter = SplashPresenter(scene: windowScene, viewController: viewController)
         splashPresenter?.present()

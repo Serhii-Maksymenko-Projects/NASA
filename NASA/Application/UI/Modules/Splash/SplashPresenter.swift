@@ -30,7 +30,6 @@ final class SplashPresenter: SplashPresenterDescription {
     }
 
     func present() {
-        print("Splash present")
         foregroundSplashWindow.isHidden = false
     }
 
