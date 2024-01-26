@@ -20,7 +20,7 @@ final class CardLabel: UILabel {
     private func updateAttributed() {
         guard let text else { return }
         let resultTextAttributed = NSAttributedString(string: text,
-                                                      attributes: [.font: UIFont.ncBodyBold])
+                                                      attributes: [.font: UIFont.nasaBodyBold])
         let newAttributed = NSMutableAttributedString(string: prefix)
         newAttributed.append(resultTextAttributed)
         attributedText = newAttributed

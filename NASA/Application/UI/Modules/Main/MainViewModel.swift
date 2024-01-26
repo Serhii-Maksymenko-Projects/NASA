@@ -45,7 +45,7 @@ class MainViewModel: MainViewModelProtocol {
     func presentDetailPhoto(photoUrl: URL) {
         coordinator?.presentDetailController(photoUrl: photoUrl)
     }
-    
+
     func presentHistory() {
         coordinator?.presentHistoryController()
     }

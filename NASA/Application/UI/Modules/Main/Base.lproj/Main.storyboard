@@ -269,13 +269,13 @@
     </scenes>
     <designables>
         <designable name="6ao-cj-xzx">
-            <size key="intrinsicContentSize" width="65.666666666666671" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="67.666666666666671" height="19.333333333333332"/>
         </designable>
         <designable name="Huw-L6-iCm">
-            <size key="intrinsicContentSize" width="41.666666666666664" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="43.333333333333336" height="19.333333333333332"/>
         </designable>
         <designable name="jft-k3-02E">
-            <size key="intrinsicContentSize" width="49.666666666666664" height="19.333333333333332"/>
+            <size key="intrinsicContentSize" width="51.666666666666664" height="19.333333333333332"/>
         </designable>
     </designables>
     <resources>

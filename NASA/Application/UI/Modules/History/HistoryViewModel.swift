@@ -12,13 +12,13 @@ protocol HistoryViewModelProtocol: AnyObject {
 }
 
 final class HistoryViewModel: HistoryViewModelProtocol {
-    
+
     private weak var coordinator: Coordinator?
-    
+
     init(coordinator: Coordinator? = nil) {
         self.coordinator = coordinator
     }
-    
+
     func dismissHistory() {
         coordinator?.dismiss()
     }

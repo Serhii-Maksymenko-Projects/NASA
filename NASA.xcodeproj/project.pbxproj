@@ -47,6 +47,11 @@
 		A5E3A52A2B614724006D0313 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5292B614724006D0313 /* HistoryViewModel.swift */; };
 		A5E3A52C2B614731006D0313 /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A52B2B614731006D0313 /* HistoryCoordinator.swift */; };
 		A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */; };
+		A5E3A53D2B62ACB5006D0313 /* NasaAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A53C2B62ACB5006D0313 /* NasaAlert.swift */; };
+		A5E3A5412B62DD11006D0313 /* BaseFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5402B62DD11006D0313 /* BaseFilterAlertView.swift */; };
+		A5E3A5442B62F1A3006D0313 /* DateFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5432B62F1A3006D0313 /* DateFilterAlertView.swift */; };
+		A5E3A5462B62F57A006D0313 /* TypeFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */; };
+		A5E3A5482B640DA9006D0313 /* NasaAlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +94,11 @@
 		A5E3A5292B614724006D0313 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		A5E3A52B2B614731006D0313 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
 		A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyLogoView.swift; sourceTree = "<group>"; };
+		A5E3A53C2B62ACB5006D0313 /* NasaAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlert.swift; sourceTree = "<group>"; };
+		A5E3A5402B62DD11006D0313 /* BaseFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFilterAlertView.swift; sourceTree = "<group>"; };
+		A5E3A5432B62F1A3006D0313 /* DateFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterAlertView.swift; sourceTree = "<group>"; };
+		A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterAlertView.swift; sourceTree = "<group>"; };
+		A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +301,7 @@
 		A5E3A51F2B609345006D0313 /* Elements */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A53B2B62AC9A006D0313 /* Alerts */,
 				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
 				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
 				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
@@ -308,6 +319,34 @@
 				A5E3A52D2B615888006D0313 /* EmptyLogoView.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		A5E3A53B2B62AC9A006D0313 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5492B642F9C006D0313 /* Base */,
+				A5E3A54A2B642FAF006D0313 /* Filters */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		A5E3A5492B642F9C006D0313 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A53C2B62ACB5006D0313 /* NasaAlert.swift */,
+				A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A5E3A54A2B642FAF006D0313 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5402B62DD11006D0313 /* BaseFilterAlertView.swift */,
+				A5E3A5432B62F1A3006D0313 /* DateFilterAlertView.swift */,
+				A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */,
+			);
+			path = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,19 +461,23 @@
 				A5E3A5052B5EAA54006D0313 /* UIFont + Extension.swift in Sources */,
 				A5E3A5072B5EADE5006D0313 /* DetailViewController.swift in Sources */,
 				A5E3A52C2B614731006D0313 /* HistoryCoordinator.swift in Sources */,
+				A5E3A5462B62F57A006D0313 /* TypeFilterAlertView.swift in Sources */,
 				A532118D2B5C08B300E8FB2A /* SplashViewController.swift in Sources */,
 				A58E1F0B2B5C4AC700DF973E /* CardTableViewCell.swift in Sources */,
 				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
+				A5E3A53D2B62ACB5006D0313 /* NasaAlert.swift in Sources */,
 				A5E3A5102B601C7B006D0313 /* AppCoordinator.swift in Sources */,
 				A5E3A50B2B601B43006D0313 /* Coordinator.swift in Sources */,
 				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
 				A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */,
+				A5E3A5412B62DD11006D0313 /* BaseFilterAlertView.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
 				A5E3A52A2B614724006D0313 /* HistoryViewModel.swift in Sources */,
 				A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
 				A5E3A5282B6146EF006D0313 /* HistoryViewController.swift in Sources */,
+				A5E3A5482B640DA9006D0313 /* NasaAlertContentView.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
 				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
 				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
@@ -447,6 +490,7 @@
 				A5E3A4F82B5DCAA4006D0313 /* NetworkConfiguration.swift in Sources */,
 				A5E3A5122B601D4C006D0313 /* MainCoordinator.swift in Sources */,
 				A5E3A4EF2B5DC9E9006D0313 /* NetworkService.swift in Sources */,
+				A5E3A5442B62F1A3006D0313 /* DateFilterAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,6 +640,7 @@
 				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -629,6 +674,7 @@
 				INFOPLIST_FILE = NASA/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

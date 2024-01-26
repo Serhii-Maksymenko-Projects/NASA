@@ -37,7 +37,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchData(roverType: .spirit)
+        viewModel.fetchData(roverType: .opportunity)
     }
 
     private func bind() {
@@ -52,9 +52,28 @@ final class MainViewController: UIViewController {
             guard let url = event.element?.photoUrl else { return }
             self?.viewModel.presentDetailPhoto(photoUrl: url)
         }.disposed(by: disposeBag)
-        
+
         historyButton.rx.tap.subscribe { [weak self] _ in
             self?.viewModel.presentHistory()
         }.disposed(by: disposeBag)
+
+        roverButton.rx.tap.subscribe { _ in
+            let typeAlertContent = TypeFilterAlertView()
+            let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
+            alert.show()
+        }.disposed(by: disposeBag)
+
+        cameraButton.rx.tap.subscribe { _ in
+            let typeAlertContent = TypeFilterAlertView()
+            let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
+            alert.show()
+        }.disposed(by: disposeBag)
+
+        calendarButton.rx.tap.subscribe { _ in
+            let dateAlertContent = DateFilterAlertView()
+            let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
+            alert.show()
+        }.disposed(by: disposeBag)
     }
+
 }

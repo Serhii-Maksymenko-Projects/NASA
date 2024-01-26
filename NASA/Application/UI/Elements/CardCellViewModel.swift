@@ -26,9 +26,6 @@ final class CardCellViewModel: CardCellViewModelProtocol {
         roverName.on(.next(marsPhoto.roverName))
         cameraName.on(.next(marsPhoto.cameraName))
         dateName.on(.next(marsPhoto.dateString))
-//        roverName.on(.next("Rover: \(marsPhoto.roverName)"))
-//        cameraName.on(.next("Camera: \(marsPhoto.cameraName)"))
-//        dateName.on(.next("Date: \(marsPhoto.dateString)"))
         photoUrl.on(.next(marsPhoto.photoUrl))
     }
 
