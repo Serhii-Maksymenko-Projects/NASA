@@ -11,7 +11,7 @@ protocol NasaAlertContentViewDelegate: AnyObject {
     func dismiss()
 }
 
-class NasaAlertContentView: UIView {
+class BaseNasaAlertContentView: UIView {
 
     var delegate: NasaAlertContentViewDelegate?
     private(set) var padding: CGFloat = 20.0

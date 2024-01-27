@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseFilterAlertView: NasaAlertContentView {
+class BaseFilterAlertView: BaseNasaAlertContentView {
 
     private let closeButton: UIButton = {
         let button = UIButton(type: .system)

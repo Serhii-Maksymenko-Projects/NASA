@@ -31,12 +31,12 @@ final class NasaAlert {
     }()
 
     private let style: Style
-    private var contentView: NasaAlertContentView = NasaAlertContentView()
+    private var contentView: BaseNasaAlertContentView = BaseNasaAlertContentView()
 
-    init(content: NasaAlertContentView, style: Style, on viewController: UIViewController) {
+    init(content: BaseNasaAlertContentView, style: Style, on viewController: UIViewController?) {
         self.style = style
         self.contentView = content
-        guard let targetView = viewController.view else { return }
+        guard let targetView = viewController?.view else { return }
         backgroundView.frame = targetView.bounds
         targetView.addSubview(backgroundView)
         targetView.addSubview(content)
@@ -73,7 +73,7 @@ final class NasaAlert {
     private func animate(isShow: Bool) {
         let startBlur: CGFloat = isShow ? 0.0 : 0.7
         let startMove: CGFloat = isShow ? 0.3 : 0.0
-        let newAlpha: CGFloat = isShow ? 0.6 : 0.0
+        let newAlpha: CGFloat = isShow ? 0.4 : 0.0
         let newPosition: CGFloat = isShow ? 0 : 1000
         UIView.animateKeyframes(withDuration: 0.4,
                                 delay: 0,

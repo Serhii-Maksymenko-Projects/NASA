@@ -51,7 +51,9 @@
 		A5E3A5412B62DD11006D0313 /* BaseFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5402B62DD11006D0313 /* BaseFilterAlertView.swift */; };
 		A5E3A5442B62F1A3006D0313 /* DateFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5432B62F1A3006D0313 /* DateFilterAlertView.swift */; };
 		A5E3A5462B62F57A006D0313 /* TypeFilterAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */; };
-		A5E3A5482B640DA9006D0313 /* NasaAlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */; };
+		A5E3A5482B640DA9006D0313 /* BaseNasaAlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5472B640DA9006D0313 /* BaseNasaAlertContentView.swift */; };
+		A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */; };
+		A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +100,9 @@
 		A5E3A5402B62DD11006D0313 /* BaseFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFilterAlertView.swift; sourceTree = "<group>"; };
 		A5E3A5432B62F1A3006D0313 /* DateFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFilterAlertView.swift; sourceTree = "<group>"; };
 		A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterAlertView.swift; sourceTree = "<group>"; };
-		A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentView.swift; sourceTree = "<group>"; };
+		A5E3A5472B640DA9006D0313 /* BaseNasaAlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNasaAlertContentView.swift; sourceTree = "<group>"; };
+		A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertAction.swift; sourceTree = "<group>"; };
+		A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,7 +338,9 @@
 			isa = PBXGroup;
 			children = (
 				A5E3A53C2B62ACB5006D0313 /* NasaAlert.swift */,
-				A5E3A5472B640DA9006D0313 /* NasaAlertContentView.swift */,
+				A5E3A5472B640DA9006D0313 /* BaseNasaAlertContentView.swift */,
+				A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */,
+				A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -477,9 +483,11 @@
 				A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
 				A5E3A5282B6146EF006D0313 /* HistoryViewController.swift in Sources */,
-				A5E3A5482B640DA9006D0313 /* NasaAlertContentView.swift in Sources */,
+				A5E3A5482B640DA9006D0313 /* BaseNasaAlertContentView.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
+				A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */,
 				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
+				A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */,
 				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
 				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,

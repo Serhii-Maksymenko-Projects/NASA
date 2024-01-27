@@ -63,17 +63,35 @@ final class MainViewController: UIViewController {
             alert.show()
         }.disposed(by: disposeBag)
 
-        cameraButton.rx.tap.subscribe { _ in
+        cameraButton.rx.tap.subscribe { [weak self] _ in
             let typeAlertContent = TypeFilterAlertView()
             let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
             alert.show()
         }.disposed(by: disposeBag)
 
-        calendarButton.rx.tap.subscribe { _ in
+        calendarButton.rx.tap.subscribe { [weak self] _ in
             let dateAlertContent = DateFilterAlertView()
             let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
             alert.show()
         }.disposed(by: disposeBag)
+
+        saveButton.rx.tap.subscribe { [weak self] _ in
+            self?.createSaveFilterAlert()
+        }.disposed(by: disposeBag)
+    }
+
+    private func createSaveFilterAlert() {
+        let saveAlertContent = NasaAlertContentBuilder(
+            title: "Save Filter",
+            message: "The current filters and the date you have chosen can be saved to the filter history.")
+        let saveAction = NasaAlertAction(title: "Save", style: .bold, size: .small)
+        let cancelAction = NasaAlertAction(title: "Cancel", style: .default, size: .small)
+        saveAlertContent.addAction(action: saveAction, at: .main)
+        saveAlertContent.addAction(action: cancelAction, at: .main)
+        saveAlertContent.setContentPadding(62)
+        saveAlertContent.build()
+        let alert = NasaAlert(content: saveAlertContent, style: .alert, on: self)
+        alert.show()
     }
 
 }
