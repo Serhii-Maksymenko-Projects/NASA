@@ -93,6 +93,7 @@ extension NasaAlert: NasaAlertContentViewDelegate {
 
     func dismiss() {
         animate(isShow: false)
+        contentView.delegate = nil
     }
 
 }

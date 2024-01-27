@@ -7,7 +7,10 @@
 
 import UIKit
 
-class BaseFilterAlertView: BaseNasaAlertContentView {
+class BaseFilterAlertView<T>: BaseNasaAlertContentView {
+
+    private var completionHandler: ((_ filterValue: T) -> Void)?
+    var resultValue: T?
 
     private let closeButton: UIButton = {
         let button = UIButton(type: .system)
@@ -55,10 +58,22 @@ class BaseFilterAlertView: BaseNasaAlertContentView {
         super.configureContentView()
         addSubview(headerStackView)
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
+    }
+
+    func addSaveAction(_ completion: @escaping (_ filterValue: T) -> Void) {
+        completionHandler = completion
     }
 
     @objc func close() {
         delegate?.dismiss()
+    }
+
+    @objc func save() {
+        if let resultValue {
+            completionHandler?(resultValue)
+        }
+        close()
     }
 
 }

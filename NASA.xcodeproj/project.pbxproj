@@ -54,6 +54,7 @@
 		A5E3A5482B640DA9006D0313 /* BaseNasaAlertContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5472B640DA9006D0313 /* BaseNasaAlertContentView.swift */; };
 		A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */; };
 		A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */; };
+		A5E3A5532B657810006D0313 /* TypeFilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		A5E3A5472B640DA9006D0313 /* BaseNasaAlertContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNasaAlertContentView.swift; sourceTree = "<group>"; };
 		A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertAction.swift; sourceTree = "<group>"; };
 		A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentBuilder.swift; sourceTree = "<group>"; };
+		A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +253,7 @@
 		A5E3A5192B6092BC006D0313 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A5E3A51B2B6092DF006D0313 /* Enums */,
+				A5E3A51B2B6092DF006D0313 /* Helpers */,
 				A5E3A51A2B6092D2006D0313 /* Extensions */,
 			);
 			path = Common;
@@ -265,13 +267,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A5E3A51B2B6092DF006D0313 /* Enums */ = {
+		A5E3A51B2B6092DF006D0313 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
 				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
+				A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */,
 			);
-			path = Enums;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A5E3A51C2B609307006D0313 /* Application */ = {
@@ -489,6 +492,7 @@
 				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
 				A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */,
 				A5E3A5032B5E94D5006D0313 /* CardLabel.swift in Sources */,
+				A5E3A5532B657810006D0313 /* TypeFilterProtocol.swift in Sources */,
 				A5E3A4FC2B5DCAD4006D0313 /* CameraType.swift in Sources */,
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,
 				A5E3A5092B60149F006D0313 /* DetailViewModel.swift in Sources */,

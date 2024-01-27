@@ -11,6 +11,9 @@ import RxCocoa
 
 protocol MainViewModelProtocol: AnyObject {
     var photos: PublishSubject<[MarsPhotoModel]> { get }
+    var roverFilter: PublishSubject<RoverType> { get }
+    var cameraFilter: PublishSubject<CameraType> { get }
+    var dateFilter: PublishSubject<Date?> { get }
 
     func fetchData(roverType: RoverType)
     func presentDetailPhoto(photoUrl: URL)
@@ -19,17 +22,23 @@ protocol MainViewModelProtocol: AnyObject {
 
 class MainViewModel: MainViewModelProtocol {
 
-    private weak var coordinator: MainCoordinatorProtocol?
+    var roverFilter = PublishSubject<RoverType>()
+    var cameraFilter = PublishSubject<CameraType>()
+    var dateFilter = PublishSubject<Date?>()
     var photos = PublishSubject<[MarsPhotoModel]>()
+    
+    private weak var coordinator: MainCoordinatorProtocol?
     private let service = NetworkService(session: URLSession.shared)
     private let config = NetworkConfiguration()
     private let disposeBag = DisposeBag()
 
     init(coordinator: MainCoordinatorProtocol) {
         self.coordinator = coordinator
+        testValues()
     }
 
     func fetchData(roverType: RoverType) {
+        
         let urls = config.getUrls(roverType: roverType)
         mergeData(urls: urls).subscribe { [weak self] event in
             if let result = event.element {
@@ -58,5 +67,19 @@ class MainViewModel: MainViewModelProtocol {
             .scan(into: []) { test, models in
                 test.append(contentsOf: models.photos)
             }
+    }
+    
+    private func testValues() {
+        roverFilter.subscribe { event in
+            print("testValue RoverType: \(event.element)")
+        }.disposed(by: disposeBag)
+
+        cameraFilter.subscribe { event in
+            print("testValue CameraType: \(event.element)")
+        }.disposed(by: disposeBag)
+
+        dateFilter.subscribe { event in
+            print("testValue Date: \(event.element)")
+        }.disposed(by: disposeBag)
     }
 }

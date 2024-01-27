@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DateFilterAlertView: BaseFilterAlertView {
+final class DateFilterAlertView: BaseFilterAlertView<Any> {
 
     private let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
@@ -35,6 +35,11 @@ final class DateFilterAlertView: BaseFilterAlertView {
         addSubview(datePicker)
         layer.cornerRadius = 50
         layer.masksToBounds = true
+    }
+
+    override func save() {
+        resultValue = datePicker.date
+        super.save()
     }
 
 }

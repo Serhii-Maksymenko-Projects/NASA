@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class TypeFilterAlertView: BaseFilterAlertView {
+final class TypeFilterAlertView: BaseFilterAlertView<Any> {
+
+    var contentText = [TypeFilterProtocol]()
 
     private lazy var typePicker: UIPickerView = {
         let picker = UIPickerView()
@@ -45,7 +47,7 @@ extension TypeFilterAlertView: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 7
+        return contentText.count
     }
 
 }
@@ -53,7 +55,10 @@ extension TypeFilterAlertView: UIPickerViewDataSource {
 extension TypeFilterAlertView: UIPickerViewDelegate {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "Test text: \(row)"
+        return contentText[row].description
     }
 
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        resultValue = contentText[row]
+    }
 }

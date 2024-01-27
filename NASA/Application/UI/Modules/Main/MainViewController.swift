@@ -41,6 +41,16 @@ final class MainViewController: UIViewController {
     }
 
     private func bind() {
+        viewModel.roverFilter
+            .map { $0.rawValue.capitalized }
+            .bind(to: roverButton.rx.title(for: .normal))
+            .disposed(by: disposeBag)
+
+        viewModel.cameraFilter
+            .map { $0.rawValue.capitalized }
+            .bind(to: cameraButton.rx.title(for: .normal))
+            .disposed(by: disposeBag)
+
         viewModel.photos
             .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
                                          cellType: CardTableViewCell.self)) { _, item, cell in
@@ -57,14 +67,24 @@ final class MainViewController: UIViewController {
             self?.viewModel.presentHistory()
         }.disposed(by: disposeBag)
 
-        roverButton.rx.tap.subscribe { _ in
+        roverButton.rx.tap.subscribe { [weak self] _ in
             let typeAlertContent = TypeFilterAlertView()
+            typeAlertContent.contentText = RoverType.allCases
+            typeAlertContent.addSaveAction { roverName in
+                guard let roverType = roverName as? RoverType else { return }
+                self?.viewModel.roverFilter.onNext(roverType)
+            }
             let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
             alert.show()
         }.disposed(by: disposeBag)
 
         cameraButton.rx.tap.subscribe { [weak self] _ in
             let typeAlertContent = TypeFilterAlertView()
+            typeAlertContent.contentText = CameraType.allCases
+            typeAlertContent.addSaveAction { cameraName in
+                guard let cameraType = cameraName as? CameraType else { return }
+                self?.viewModel.cameraFilter.onNext(cameraType)
+            }
             let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
             alert.show()
         }.disposed(by: disposeBag)
@@ -72,6 +92,10 @@ final class MainViewController: UIViewController {
         calendarButton.rx.tap.subscribe { [weak self] _ in
             let dateAlertContent = DateFilterAlertView()
             let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
+            dateAlertContent.addSaveAction { date in
+                guard let date = date as? Date else { return }
+                self?.viewModel.dateFilter.onNext(date)
+            }
             alert.show()
         }.disposed(by: disposeBag)
 
