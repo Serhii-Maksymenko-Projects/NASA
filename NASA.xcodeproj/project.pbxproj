@@ -55,6 +55,7 @@
 		A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */; };
 		A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */; };
 		A5E3A5532B657810006D0313 /* TypeFilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */; };
+		A5E3A5572B65BD97006D0313 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5562B65BD97006D0313 /* FilterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		A5E3A54E2B649092006D0313 /* NasaAlertAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertAction.swift; sourceTree = "<group>"; };
 		A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentBuilder.swift; sourceTree = "<group>"; };
 		A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterProtocol.swift; sourceTree = "<group>"; };
+		A5E3A5562B65BD97006D0313 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		A58E1F0C2B5C542B00DF973E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5542B65BD6F006D0313 /* CardCell */,
 				A532118E2B5C08B300E8FB2A /* Main.storyboard */,
 				A59A97032B5C4639007E56E6 /* MainViewController.swift */,
 				A5E3A4F52B5DCA7A006D0313 /* MainViewModel.swift */,
@@ -309,9 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				A5E3A53B2B62AC9A006D0313 /* Alerts */,
-				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
-				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
-				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -319,6 +319,7 @@
 		A5E3A5242B6146D5006D0313 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5552B65BD87006D0313 /* FilterCell */,
 				A5E3A5252B6146E2006D0313 /* History.storyboard */,
 				A5E3A5272B6146EF006D0313 /* HistoryViewController.swift */,
 				A5E3A5292B614724006D0313 /* HistoryViewModel.swift */,
@@ -356,6 +357,24 @@
 				A5E3A5452B62F57A006D0313 /* TypeFilterAlertView.swift */,
 			);
 			path = Filters;
+			sourceTree = "<group>";
+		};
+		A5E3A5542B65BD6F006D0313 /* CardCell */ = {
+			isa = PBXGroup;
+			children = (
+				A58E1F0A2B5C4AC700DF973E /* CardTableViewCell.swift */,
+				A5E3A5002B5E8F0D006D0313 /* CardCellViewModel.swift */,
+				A5E3A5022B5E94D5006D0313 /* CardLabel.swift */,
+			);
+			path = CardCell;
+			sourceTree = "<group>";
+		};
+		A5E3A5552B65BD87006D0313 /* FilterCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5562B65BD97006D0313 /* FilterTableViewCell.swift */,
+			);
+			path = FilterCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +507,7 @@
 				A5E3A5282B6146EF006D0313 /* HistoryViewController.swift in Sources */,
 				A5E3A5482B640DA9006D0313 /* BaseNasaAlertContentView.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
+				A5E3A5572B65BD97006D0313 /* FilterTableViewCell.swift in Sources */,
 				A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */,
 				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
 				A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */,

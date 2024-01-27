@@ -26,7 +26,7 @@ class MainViewModel: MainViewModelProtocol {
     var cameraFilter = PublishSubject<CameraType>()
     var dateFilter = PublishSubject<Date?>()
     var photos = PublishSubject<[MarsPhotoModel]>()
-    
+
     private weak var coordinator: MainCoordinatorProtocol?
     private let service = NetworkService(session: URLSession.shared)
     private let config = NetworkConfiguration()
@@ -38,7 +38,6 @@ class MainViewModel: MainViewModelProtocol {
     }
 
     func fetchData(roverType: RoverType) {
-        
         let urls = config.getUrls(roverType: roverType)
         mergeData(urls: urls).subscribe { [weak self] event in
             if let result = event.element {
@@ -68,18 +67,18 @@ class MainViewModel: MainViewModelProtocol {
                 test.append(contentsOf: models.photos)
             }
     }
-    
+
     private func testValues() {
         roverFilter.subscribe { event in
-            print("testValue RoverType: \(event.element)")
+            print("testValue RoverType: \(String(describing: event.element))")
         }.disposed(by: disposeBag)
 
         cameraFilter.subscribe { event in
-            print("testValue CameraType: \(event.element)")
+            print("testValue CameraType: \(String(describing: event.element))")
         }.disposed(by: disposeBag)
 
         dateFilter.subscribe { event in
-            print("testValue Date: \(event.element)")
+            print("testValue Date: \(String(describing: event.element))")
         }.disposed(by: disposeBag)
     }
 }

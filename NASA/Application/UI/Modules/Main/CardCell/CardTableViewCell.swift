@@ -10,6 +10,7 @@ import RxSwift
 import SDWebImage
 
 final class CardTableViewCell: UITableViewCell {
+
     @IBOutlet weak var roverLabel: CardLabel!
     @IBOutlet weak var cameraLabel: CardLabel!
     @IBOutlet weak var dateLabel: CardLabel!
