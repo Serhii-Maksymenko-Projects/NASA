@@ -47,7 +47,7 @@ final class MainViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.cameraFilter
-            .map { $0.rawValue.capitalized }
+            .map { $0.rawValue }
             .bind(to: cameraButton.rx.title(for: .normal))
             .disposed(by: disposeBag)
 
@@ -109,6 +109,9 @@ final class MainViewController: UIViewController {
             title: "Save Filter",
             message: "The current filters and the date you have chosen can be saved to the filter history.")
         let saveAction = NasaAlertAction(title: "Save", style: .bold, size: .small)
+        saveAction.rx.tap.subscribe { [weak self] _ in
+            self?.viewModel.saveFilter()
+        }.disposed(by: disposeBag)
         let cancelAction = NasaAlertAction(title: "Cancel", style: .default, size: .small)
         saveAlertContent.addAction(action: saveAction, at: .main)
         saveAlertContent.addAction(action: cancelAction, at: .main)

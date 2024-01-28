@@ -40,21 +40,24 @@ final class HistoryViewController: UIViewController {
         viewModel.filters.bind(to: filtersTableView.rx.items(
             cellIdentifier: "filterCell",
             cellType: FilterTableViewCell.self)) { _, item, cell in
-                cell.roverLabel.text = item
-                cell.cameraLabel.text = item
-                cell.dateLabel.text = item
+                cell.roverLabel.text = item.roverType.rawValue.capitalized
+                cell.cameraLabel.text = item.cameraType.description
+                cell.dateLabel.text = item.date?.description ?? "All date"
         }.disposed(by: disposeBag)
 
-        viewModel.filters.map { $0.count > 1 }
+        viewModel.filters.map { $0.count > 0 }
             .bind(to: emptyLogoView.rx.isHidden)
             .disposed(by: disposeBag)
 
-        filtersTableView.rx.modelSelected(String.self).subscribe { [weak self] event in
-            self?.createFilterMenuAlert()
+        filtersTableView.rx.modelSelected(RawFilterModel.self).subscribe { [weak self] event in
+            print("Tap Filter Cell")
+            guard let filterModel = event.element else { return }
+            print("Filter cell model: \(filterModel)")
+            self?.createFilterMenuAlert(filterModel: filterModel)
         }.disposed(by: disposeBag)
     }
 
-    func createFilterMenuAlert() {
+    func createFilterMenuAlert(filterModel: FilterModelDescription) {
         let saveAlertContent = NasaAlertContentBuilder(
             title: nil,
             message: "Menu Filter", messageColor: .layerTwo)
@@ -62,6 +65,9 @@ final class HistoryViewController: UIViewController {
         saveAlertContent.addAction(action: useAction, at: .main)
         let deleteAction = NasaAlertAction(title: "Delete", style: .destructive)
         saveAlertContent.addAction(action: deleteAction, at: .main)
+        deleteAction.rx.tap.subscribe { [weak self] _ in
+            self?.viewModel.removeFilter(filter: filterModel)
+        }.disposed(by: disposeBag)
         let cancelAction = NasaAlertAction(title: "Cancel", style: .bold)
         saveAlertContent.addAction(action: cancelAction, at: .other)
         saveAlertContent.build()

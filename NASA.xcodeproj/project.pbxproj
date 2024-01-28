@@ -56,6 +56,10 @@
 		A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */; };
 		A5E3A5532B657810006D0313 /* TypeFilterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */; };
 		A5E3A5572B65BD97006D0313 /* FilterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5562B65BD97006D0313 /* FilterTableViewCell.swift */; };
+		A5E3A55A2B65CCF9006D0313 /* FilterStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5592B65CCF9006D0313 /* FilterStorageManager.swift */; };
+		A5E3A55D2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A55B2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld */; };
+		A5E3A5672B6689CD006D0313 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = A5E3A5662B6689CD006D0313 /* SDWebImage */; };
+		A5E3A5692B669FB1006D0313 /* FilterStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5682B669FB1006D0313 /* FilterStorageError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +111,9 @@
 		A5E3A5502B64984A006D0313 /* NasaAlertContentBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NasaAlertContentBuilder.swift; sourceTree = "<group>"; };
 		A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeFilterProtocol.swift; sourceTree = "<group>"; };
 		A5E3A5562B65BD97006D0313 /* FilterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableViewCell.swift; sourceTree = "<group>"; };
+		A5E3A5592B65CCF9006D0313 /* FilterStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStorageManager.swift; sourceTree = "<group>"; };
+		A5E3A55C2B65CE2A006D0313 /* NasaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NasaDataModel.xcdatamodel; sourceTree = "<group>"; };
+		A5E3A5682B669FB1006D0313 /* FilterStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStorageError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +123,7 @@
 			files = (
 				A5E3A4FF2B5DE130006D0313 /* SDWebImage in Frameworks */,
 				A53211A42B5C148E00E8FB2A /* RxSwift in Frameworks */,
+				A5E3A5672B6689CD006D0313 /* SDWebImage in Frameworks */,
 				A53211A22B5C148E00E8FB2A /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +165,7 @@
 				A53211912B5C08B600E8FB2A /* Assets.xcassets */,
 				A53211A52B5C153100E8FB2A /* Colors.xcassets */,
 				A53211A72B5C168200E8FB2A /* Icons.xcassets */,
+				A5E3A55B2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 		A5E3A51E2B609324006D0313 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				A5E3A5582B65CCA8006D0313 /* Storage */,
 				A5E3A4ED2B5DC9B6006D0313 /* Network */,
 				A5E3A4F02B5DCA11006D0313 /* Models */,
 			);
@@ -377,6 +387,15 @@
 			path = FilterCell;
 			sourceTree = "<group>";
 		};
+		A5E3A5582B65CCA8006D0313 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				A5E3A5592B65CCF9006D0313 /* FilterStorageManager.swift */,
+				A5E3A5682B669FB1006D0313 /* FilterStorageError.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,6 +417,7 @@
 				A53211A12B5C148E00E8FB2A /* RxCocoa */,
 				A53211A32B5C148E00E8FB2A /* RxSwift */,
 				A5E3A4FE2B5DE130006D0313 /* SDWebImage */,
+				A5E3A5662B6689CD006D0313 /* SDWebImage */,
 			);
 			productName = NASA;
 			productReference = A53211852B5C08B300E8FB2A /* NASA.app */;
@@ -495,12 +515,14 @@
 				A5E3A4FA2B5DCAB6006D0313 /* RoverType.swift in Sources */,
 				A53211892B5C08B300E8FB2A /* AppDelegate.swift in Sources */,
 				A5E3A53D2B62ACB5006D0313 /* NasaAlert.swift in Sources */,
+				A5E3A55A2B65CCF9006D0313 /* FilterStorageManager.swift in Sources */,
 				A5E3A5102B601C7B006D0313 /* AppCoordinator.swift in Sources */,
 				A5E3A50B2B601B43006D0313 /* Coordinator.swift in Sources */,
 				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
 				A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */,
 				A5E3A5412B62DD11006D0313 /* BaseFilterAlertView.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
+				A5E3A55D2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld in Sources */,
 				A5E3A52A2B614724006D0313 /* HistoryViewModel.swift in Sources */,
 				A5E3A5152B602376006D0313 /* DetailCoordinator.swift in Sources */,
 				A532118B2B5C08B300E8FB2A /* SceneDelegate.swift in Sources */,
@@ -508,6 +530,7 @@
 				A5E3A5482B640DA9006D0313 /* BaseNasaAlertContentView.swift in Sources */,
 				A5E3A4F62B5DCA7A006D0313 /* MainViewModel.swift in Sources */,
 				A5E3A5572B65BD97006D0313 /* FilterTableViewCell.swift in Sources */,
+				A5E3A5692B669FB1006D0313 /* FilterStorageError.swift in Sources */,
 				A5E3A54F2B649092006D0313 /* NasaAlertAction.swift in Sources */,
 				A5E3A52E2B615888006D0313 /* EmptyLogoView.swift in Sources */,
 				A5E3A5512B64984A006D0313 /* NasaAlertContentBuilder.swift in Sources */,
@@ -785,7 +808,25 @@
 			package = A5E3A4FD2B5DE130006D0313 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
+		A5E3A5662B6689CD006D0313 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5E3A4FD2B5DE130006D0313 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		A5E3A55B2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5E3A55C2B65CE2A006D0313 /* NasaDataModel.xcdatamodel */,
+			);
+			currentVersion = A5E3A55C2B65CE2A006D0313 /* NasaDataModel.xcdatamodel */;
+			path = NasaDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A532117D2B5C08B300E8FB2A /* Project object */;
 }

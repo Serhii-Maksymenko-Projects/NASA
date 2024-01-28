@@ -9,24 +9,38 @@ import Foundation
 import RxSwift
 
 protocol HistoryViewModelProtocol: AnyObject {
-    var filters: PublishSubject<[String]> { get }
+    var filters: BehaviorSubject<[FilterModelDescription]> { get }
     func dismissHistory()
+    func fetchData()
+    func removeFilter(filter: FilterModelDescription)
 }
 
 final class HistoryViewModel: HistoryViewModelProtocol {
 
-    var filters = PublishSubject<[String]>()
+    var filters = BehaviorSubject<[FilterModelDescription]>(value: [])
     private weak var coordinator: Coordinator?
+    private let storageManager = FilterStorageManager()
+    private let disposeBag = DisposeBag()
 
     init(coordinator: Coordinator? = nil) {
         self.coordinator = coordinator
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            let arrays = (1...10).map { "Test text: \($0)" }
-            self?.filters.onNext(arrays)
-        }
+        fetchData()
     }
 
     func dismissHistory() {
         coordinator?.dismiss()
     }
+
+    func fetchData() {
+        storageManager.fetchData().subscribe { [weak self] event in
+            guard let resultFilters = event.element else { return }
+            self?.filters.onNext(resultFilters)
+        }.disposed(by: disposeBag)
+    }
+
+    func removeFilter(filter: FilterModelDescription) {
+        guard storageManager.remove(filter: filter) else { return }
+        fetchData()
+    }
+
 }
