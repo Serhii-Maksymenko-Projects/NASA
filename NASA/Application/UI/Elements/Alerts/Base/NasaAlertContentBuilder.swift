@@ -69,6 +69,7 @@ final class NasaAlertContentBuilder: BaseNasaAlertContentView {
     }
 
     func addAction(action: NasaAlertAction, at section: Section) {
+        action.addTarget(self, action: #selector(close), for: .touchUpInside)
         switch section {
         case .main: addActionToMainSection(action: action)
         case .other: addActionToOtherSection(action: action)

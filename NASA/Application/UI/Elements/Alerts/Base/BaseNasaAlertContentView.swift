@@ -35,4 +35,8 @@ class BaseNasaAlertContentView: UIView {
         self.padding = padding
     }
 
+    @objc func close() {
+        delegate?.dismiss()
+    }
+
 }

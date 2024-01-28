@@ -18,6 +18,12 @@ final class HistoryViewController: UIViewController {
     private let viewModel: HistoryViewModelProtocol
     private let disposeBag = DisposeBag()
 
+    private let dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD"
+        return dateFormatter
+    }()
+
     init?(coder: NSCoder, viewModel: HistoryViewModelProtocol) {
         self.viewModel = viewModel
         super.init(coder: coder)
@@ -39,10 +45,12 @@ final class HistoryViewController: UIViewController {
 
         viewModel.filters.bind(to: filtersTableView.rx.items(
             cellIdentifier: "filterCell",
-            cellType: FilterTableViewCell.self)) { _, item, cell in
+            cellType: FilterTableViewCell.self)) { [weak self] _, item, cell in
                 cell.roverLabel.text = item.roverType.rawValue.capitalized
                 cell.cameraLabel.text = item.cameraType.description
-                cell.dateLabel.text = item.date?.description ?? "All date"
+                cell.dateLabel.text = "All date"
+                guard let date = item.date else { return }
+                cell.dateLabel.text = self?.dateFormatter.string(from: date)
         }.disposed(by: disposeBag)
 
         viewModel.filters.map { $0.count > 0 }
@@ -50,28 +58,27 @@ final class HistoryViewController: UIViewController {
             .disposed(by: disposeBag)
 
         filtersTableView.rx.modelSelected(RawFilterModel.self).subscribe { [weak self] event in
-            print("Tap Filter Cell")
             guard let filterModel = event.element else { return }
-            print("Filter cell model: \(filterModel)")
             self?.createFilterMenuAlert(filterModel: filterModel)
         }.disposed(by: disposeBag)
     }
 
     func createFilterMenuAlert(filterModel: FilterModelDescription) {
-        let saveAlertContent = NasaAlertContentBuilder(
+        let menuFilterAlert = NasaAlertContentBuilder(
             title: nil,
             message: "Menu Filter", messageColor: .layerTwo)
-        let useAction = NasaAlertAction(title: "Use", style: .default)
-        saveAlertContent.addAction(action: useAction, at: .main)
-        let deleteAction = NasaAlertAction(title: "Delete", style: .destructive)
-        saveAlertContent.addAction(action: deleteAction, at: .main)
-        deleteAction.rx.tap.subscribe { [weak self] _ in
+        let useAction = NasaAlertAction(title: "Use", style: .default) { [weak self] in
+            self?.viewModel.useFilter(filter: filterModel)
+        }
+        let deleteAction = NasaAlertAction(title: "Delete", style: .destructive) { [weak self] in
             self?.viewModel.removeFilter(filter: filterModel)
-        }.disposed(by: disposeBag)
+        }
         let cancelAction = NasaAlertAction(title: "Cancel", style: .bold)
-        saveAlertContent.addAction(action: cancelAction, at: .other)
-        saveAlertContent.build()
-        let alert = NasaAlert(content: saveAlertContent, style: .alertSheet, on: self)
+        menuFilterAlert.addAction(action: useAction, at: .main)
+        menuFilterAlert.addAction(action: deleteAction, at: .main)
+        menuFilterAlert.addAction(action: cancelAction, at: .other)
+        menuFilterAlert.build()
+        let alert = NasaAlert(content: menuFilterAlert, style: .alertSheet, on: self)
         alert.show()
     }
 

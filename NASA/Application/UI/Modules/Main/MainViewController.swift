@@ -32,12 +32,52 @@ final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        subscribing()
         bind()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.fetchData(roverType: .opportunity)
+    }
+
+    private func subscribing() {
+        roverButton.rx.tap.subscribe { [weak self] _ in
+            self?.showFilterTypeAlert(values: RoverType.allCases) { selectedValue in
+                guard let roverType = selectedValue as? RoverType else { return }
+                self?.viewModel.roverFilter.onNext(roverType)
+            }
+        }.disposed(by: disposeBag)
+
+        cameraButton.rx.tap.subscribe { [weak self] _ in
+            self?.showFilterTypeAlert(values: CameraType.allCases) { selectedValue in
+                guard let cameraType = selectedValue as? CameraType else { return }
+                self?.viewModel.cameraFilter.onNext(cameraType)
+            }
+        }.disposed(by: disposeBag)
+
+        calendarButton.rx.tap.subscribe { [weak self] _ in
+            let dateAlertContent = DateFilterAlertView()
+            let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
+            dateAlertContent.addSaveAction { date in
+                guard let date = date as? Date else { return }
+                self?.viewModel.dateFilter.onNext(date)
+            }
+            alert.show()
+        }.disposed(by: disposeBag)
+
+        saveButton.rx.tap.subscribe { [weak self] _ in
+            self?.createSaveFilterAlert()
+        }.disposed(by: disposeBag)
+
+        tableView.rx.modelSelected(MarsPhotoModel.self).subscribe { [weak self] event in
+            guard let url = event.element?.photoUrl else { return }
+            self?.viewModel.presentDetailPhoto(photoUrl: url)
+        }.disposed(by: disposeBag)
+
+        historyButton.rx.tap.subscribe { [weak self] _ in
+            self?.viewModel.presentHistory()
+        }.disposed(by: disposeBag)
     }
 
     private func bind() {
@@ -57,61 +97,23 @@ final class MainViewController: UIViewController {
                 let cardViewModel = CardCellViewModel(marsPhoto: item)
                 cell.setViewModel(viewModel: cardViewModel)
         }.disposed(by: disposeBag)
+    }
 
-        tableView.rx.modelSelected(MarsPhotoModel.self).subscribe { [weak self] event in
-            guard let url = event.element?.photoUrl else { return }
-            self?.viewModel.presentDetailPhoto(photoUrl: url)
-        }.disposed(by: disposeBag)
-
-        historyButton.rx.tap.subscribe { [weak self] _ in
-            self?.viewModel.presentHistory()
-        }.disposed(by: disposeBag)
-
-        roverButton.rx.tap.subscribe { [weak self] _ in
-            let typeAlertContent = TypeFilterAlertView()
-            typeAlertContent.contentText = RoverType.allCases
-            typeAlertContent.addSaveAction { roverName in
-                guard let roverType = roverName as? RoverType else { return }
-                self?.viewModel.roverFilter.onNext(roverType)
-            }
-            let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
-            alert.show()
-        }.disposed(by: disposeBag)
-
-        cameraButton.rx.tap.subscribe { [weak self] _ in
-            let typeAlertContent = TypeFilterAlertView()
-            typeAlertContent.contentText = CameraType.allCases
-            typeAlertContent.addSaveAction { cameraName in
-                guard let cameraType = cameraName as? CameraType else { return }
-                self?.viewModel.cameraFilter.onNext(cameraType)
-            }
-            let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
-            alert.show()
-        }.disposed(by: disposeBag)
-
-        calendarButton.rx.tap.subscribe { [weak self] _ in
-            let dateAlertContent = DateFilterAlertView()
-            let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
-            dateAlertContent.addSaveAction { date in
-                guard let date = date as? Date else { return }
-                self?.viewModel.dateFilter.onNext(date)
-            }
-            alert.show()
-        }.disposed(by: disposeBag)
-
-        saveButton.rx.tap.subscribe { [weak self] _ in
-            self?.createSaveFilterAlert()
-        }.disposed(by: disposeBag)
+    private func showFilterTypeAlert(values: [TypeFilterProtocol], _ completion: ((_ selectedValue: Any) -> Void)?) {
+        let typeAlertContent = TypeFilterAlertView()
+        typeAlertContent.contentText = values
+        typeAlertContent.addSaveAction(completion)
+        let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
+        alert.show()
     }
 
     private func createSaveFilterAlert() {
         let saveAlertContent = NasaAlertContentBuilder(
             title: "Save Filter",
             message: "The current filters and the date you have chosen can be saved to the filter history.")
-        let saveAction = NasaAlertAction(title: "Save", style: .bold, size: .small)
-        saveAction.rx.tap.subscribe { [weak self] _ in
+        let saveAction = NasaAlertAction(title: "Save", style: .bold, size: .small) { [weak self] in
             self?.viewModel.saveFilter()
-        }.disposed(by: disposeBag)
+        }
         let cancelAction = NasaAlertAction(title: "Cancel", style: .default, size: .small)
         saveAlertContent.addAction(action: saveAction, at: .main)
         saveAlertContent.addAction(action: cancelAction, at: .main)

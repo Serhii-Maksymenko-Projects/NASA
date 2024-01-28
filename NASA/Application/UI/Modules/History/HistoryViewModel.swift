@@ -13,6 +13,7 @@ protocol HistoryViewModelProtocol: AnyObject {
     func dismissHistory()
     func fetchData()
     func removeFilter(filter: FilterModelDescription)
+    func useFilter(filter: FilterModelDescription)
 }
 
 final class HistoryViewModel: HistoryViewModelProtocol {
@@ -41,6 +42,10 @@ final class HistoryViewModel: HistoryViewModelProtocol {
     func removeFilter(filter: FilterModelDescription) {
         guard storageManager.remove(filter: filter) else { return }
         fetchData()
+    }
+
+    func useFilter(filter: FilterModelDescription) {
+        NotificationCenter.default.post(name: .useFilter, object: filter)
     }
 
 }

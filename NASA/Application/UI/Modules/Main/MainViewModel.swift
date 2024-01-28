@@ -36,7 +36,7 @@ class MainViewModel: MainViewModelProtocol {
 
     init(coordinator: MainCoordinatorProtocol) {
         self.coordinator = coordinator
-        self.filter = TestClass(roverType: .all, cameraType: .all, date: nil)
+        self.filter = FilterModel(roverType: .all, cameraType: .all, date: nil)
         self.subscribing()
     }
 
@@ -54,7 +54,6 @@ class MainViewModel: MainViewModelProtocol {
     }
 
     func saveFilter() {
-        print("Save filter")
         let storageManager = FilterStorageManager()
         storageManager.add(filter: filter)
     }
@@ -89,30 +88,17 @@ class MainViewModel: MainViewModelProtocol {
         dateFilter.subscribe { event in
             self.filter.date = event.element
         }.disposed(by: disposeBag)
+
+        NotificationCenter.default.rx.notification(.useFilter)
+            .subscribe { notification in
+                guard let filterObject = notification.element?.object as? FilterModelDescription 
+                else { return }
+
+                self.roverFilter.onNext(filterObject.roverType)
+                self.cameraFilter.onNext(filterObject.cameraType)
+                guard let date = filterObject.date else { return }
+                self.dateFilter.onNext(date)
+            }.disposed(by: disposeBag)
     }
 
-}
-
-protocol FilterModelDescription {
-    var roverType: RoverType { get set }
-    var cameraType: CameraType { get set }
-    var date: Date? { get set }
-}
-
-struct TestClass: FilterModelDescription {
-    var roverType: RoverType
-    var cameraType: CameraType
-    var date: Date?
-}
-
-extension RawFilterModel: FilterModelDescription {
-    var roverType: RoverType {
-        get { RoverType(rawValue: rawRoverType ?? "all") ?? .all }
-        set {}
-    }
-
-    var cameraType: CameraType {
-        get { CameraType(rawValue: rawCameraType ?? "all") ?? .all }
-        set {}
-    }
 }

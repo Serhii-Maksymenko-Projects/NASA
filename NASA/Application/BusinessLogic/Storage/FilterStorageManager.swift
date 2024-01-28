@@ -11,7 +11,7 @@ import CoreData
 
 protocol FilterStorageManagerProtocol: AnyObject {
     func fetchData() -> Observable<[FilterModelDescription]>
-    func add(filter: FilterModelDescription) -> Bool
+    func add(filter: FilterModelDescription)
     func remove(filter: FilterModelDescription) -> Bool
 }
 
@@ -46,17 +46,16 @@ final class FilterStorageManager: FilterStorageManagerProtocol {
         }
     }
 
-    func add(filter: FilterModelDescription) -> Bool {
+    func add(filter: FilterModelDescription) {
         guard let entity = NSEntityDescription.entity(forEntityName: entityName,
                                                       in: context)
-        else { return false }
+        else { return }
 
         let filterObject = RawFilterModel(entity: entity, insertInto: context)
         filterObject.rawRoverType = filter.roverType.rawValue
         filterObject.rawCameraType = filter.cameraType.rawValue
         filterObject.date = filter.date
         saveChanged()
-        return true
     }
 
     func remove(filter: FilterModelDescription) -> Bool {

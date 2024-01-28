@@ -19,9 +19,12 @@ final class NasaAlertAction: UIButton {
         case `default` = 60
         case small = 44
     }
+    
+    private var completionHandler: (() -> Void)?
 
-    convenience init(title: String, style: Style, size: Size = .default) {
+    convenience init(title: String, style: Style, size: Size = .default, completionHandler: (() -> Void)? = nil) {
         self.init(type: .system)
+        self.completionHandler = completionHandler
         setTitle(title, for: .normal)
         heightAnchor.constraint(equalToConstant: size.rawValue).isActive = true
         switch style {
@@ -33,6 +36,11 @@ final class NasaAlertAction: UIButton {
             titleLabel?.font = .nasaBodyTwoRegular
             tintColor = .systemThree
         }
+        self.addTarget(self, action: #selector(completion), for: .touchUpInside)
+    }
+    
+    @objc private func completion() {
+        completionHandler?()
     }
 
 }

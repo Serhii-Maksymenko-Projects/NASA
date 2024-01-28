@@ -61,12 +61,8 @@ class BaseFilterAlertView<T>: BaseNasaAlertContentView {
         saveButton.addTarget(self, action: #selector(save), for: .touchUpInside)
     }
 
-    func addSaveAction(_ completion: @escaping (_ filterValue: T) -> Void) {
+    func addSaveAction(_ completion: ((_ filterValue: T) -> Void)?) {
         completionHandler = completion
-    }
-
-    @objc func close() {
-        delegate?.dismiss()
     }
 
     @objc func save() {
