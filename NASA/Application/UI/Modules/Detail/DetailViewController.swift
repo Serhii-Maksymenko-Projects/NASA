@@ -12,6 +12,7 @@ import RxCocoa
 final class DetailViewController: UIViewController {
 
     @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var zoomScrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
 
     private let viewModel: DetailViewModelProtocol
@@ -29,6 +30,7 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         photoImageView.sd_setImage(with: viewModel.photoUrl)
+        zoomScrollView.delegate = self
         bind()
     }
 
@@ -36,6 +38,18 @@ final class DetailViewController: UIViewController {
         closeButton.rx.tap.subscribe { [weak self] _ in
             self?.viewModel.dismiss()
         }.disposed(by: disposeBag)
+    }
+
+}
+
+extension DetailViewController: UIScrollViewDelegate {
+
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return photoImageView
+    }
+
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        zoomScrollView.isScrollEnabled = scale > 1.3
     }
 
 }
