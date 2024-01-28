@@ -15,7 +15,7 @@ protocol MainViewModelProtocol: AnyObject {
     var cameraFilter: PublishSubject<CameraType> { get }
     var dateFilter: PublishSubject<Date> { get }
 
-    func fetchData(roverType: RoverType)
+    func fetchData()
     func saveFilter()
     func presentDetailPhoto(photoUrl: URL)
     func presentHistory()
@@ -28,6 +28,7 @@ class MainViewModel: MainViewModelProtocol {
     var cameraFilter = PublishSubject<CameraType>()
     var dateFilter = PublishSubject<Date>()
     private var filter: FilterModelDescription
+    private var isChangedFilter = PublishSubject<Bool>()
 
     private weak var coordinator: MainCoordinatorProtocol?
     private let service = NetworkService(session: URLSession.shared)
@@ -40,8 +41,8 @@ class MainViewModel: MainViewModelProtocol {
         self.subscribing()
     }
 
-    func fetchData(roverType: RoverType) {
-        let urls = config.getUrls(roverType: roverType)
+    func fetchData() {
+        let urls = config.getUrls(filter: filter)
         mergeData(urls: urls).subscribe { [weak self] event in
             if let result = event.element {
                 self?.photos.on(.next(result))
@@ -49,6 +50,7 @@ class MainViewModel: MainViewModelProtocol {
             if let error = event.error {
                 print("Error: \(error)")
             }
+            self?.isChangedFilter.onNext(false)
             self?.coordinator?.mainViewControllerDidLoaded()
         }.disposed(by: disposeBag)
     }
@@ -79,25 +81,35 @@ class MainViewModel: MainViewModelProtocol {
     private func subscribing() {
         roverFilter.subscribe { event in
             self.filter.roverType = event.element ?? .all
+            self.isChangedFilter.onNext(true)
         }.disposed(by: disposeBag)
 
         cameraFilter.subscribe { event in
             self.filter.cameraType = event.element ?? .all
+            self.isChangedFilter.onNext(true)
         }.disposed(by: disposeBag)
 
         dateFilter.subscribe { event in
             self.filter.date = event.element
+            self.isChangedFilter.onNext(true)
         }.disposed(by: disposeBag)
 
         NotificationCenter.default.rx.notification(.useFilter)
             .subscribe { notification in
-                guard let filterObject = notification.element?.object as? FilterModelDescription 
+                guard let filterObject = notification.element?.object as? FilterModelDescription
                 else { return }
 
                 self.roverFilter.onNext(filterObject.roverType)
                 self.cameraFilter.onNext(filterObject.cameraType)
                 guard let date = filterObject.date else { return }
                 self.dateFilter.onNext(date)
+            }.disposed(by: disposeBag)
+
+        isChangedFilter.delay(.seconds(2), scheduler: MainScheduler.asyncInstance)
+            .subscribe { event in
+                if event.element == true {
+                    self.fetchData()
+                }
             }.disposed(by: disposeBag)
     }
 

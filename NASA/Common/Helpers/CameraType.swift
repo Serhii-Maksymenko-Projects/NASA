@@ -6,7 +6,7 @@
 //
 
 enum CameraType: String, CaseIterable, TypeFilterProtocol {
-    case all
+    case all = "All"
     case fhaz
     case rhaz
     case mast

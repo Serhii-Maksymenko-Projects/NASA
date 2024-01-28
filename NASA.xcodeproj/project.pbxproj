@@ -62,7 +62,7 @@
 		A5E3A5692B669FB1006D0313 /* FilterStorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5682B669FB1006D0313 /* FilterStorageError.swift */; };
 		A5E3A56B2B66A347006D0313 /* RawFilterModel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56A2B66A347006D0313 /* RawFilterModel + Extension.swift */; };
 		A5E3A56D2B66A3A9006D0313 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56C2B66A3A9006D0313 /* FilterModel.swift */; };
-		A5E3A5702B66BA7D006D0313 /* NotifyName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56F2B66BA7D006D0313 /* NotifyName.swift */; };
+		A5E3A5702B66BA7D006D0313 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56F2B66BA7D006D0313 /* NotificationName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,7 +119,7 @@
 		A5E3A5682B669FB1006D0313 /* FilterStorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStorageError.swift; sourceTree = "<group>"; };
 		A5E3A56A2B66A347006D0313 /* RawFilterModel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawFilterModel + Extension.swift"; sourceTree = "<group>"; };
 		A5E3A56C2B66A3A9006D0313 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
-		A5E3A56F2B66BA7D006D0313 /* NotifyName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyName.swift; sourceTree = "<group>"; };
+		A5E3A56F2B66BA7D006D0313 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,7 +408,7 @@
 		A5E3A56E2B66BA60006D0313 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				A5E3A56F2B66BA7D006D0313 /* NotifyName.swift */,
+				A5E3A56F2B66BA7D006D0313 /* NotificationName.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -559,7 +559,7 @@
 				A5E3A4F22B5DCA2D006D0313 /* MarsPhotoModel.swift in Sources */,
 				A5E3A5092B60149F006D0313 /* DetailViewModel.swift in Sources */,
 				A5E3A50D2B601C07006D0313 /* BaseCoordinator.swift in Sources */,
-				A5E3A5702B66BA7D006D0313 /* NotifyName.swift in Sources */,
+				A5E3A5702B66BA7D006D0313 /* NotificationName.swift in Sources */,
 				A5E3A4F42B5DCA50006D0313 /* NetworkError.swift in Sources */,
 				A59A97042B5C4639007E56E6 /* MainViewController.swift in Sources */,
 				A5E3A4F82B5DCAA4006D0313 /* NetworkConfiguration.swift in Sources */,

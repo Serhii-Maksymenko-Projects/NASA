@@ -46,6 +46,7 @@ final class HistoryViewModel: HistoryViewModelProtocol {
 
     func useFilter(filter: FilterModelDescription) {
         NotificationCenter.default.post(name: .useFilter, object: filter)
+        coordinator?.dismiss()
     }
 
 }

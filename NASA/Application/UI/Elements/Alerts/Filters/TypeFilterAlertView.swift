@@ -47,6 +47,7 @@ extension TypeFilterAlertView: UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        resultValue = contentText.first
         return contentText.count
     }
 
@@ -61,4 +62,5 @@ extension TypeFilterAlertView: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         resultValue = contentText[row]
     }
+
 }

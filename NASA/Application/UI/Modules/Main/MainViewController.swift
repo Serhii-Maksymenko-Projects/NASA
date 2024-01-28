@@ -38,7 +38,7 @@ final class MainViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetchData(roverType: .opportunity)
+        viewModel.fetchData()
     }
 
     private func subscribing() {
