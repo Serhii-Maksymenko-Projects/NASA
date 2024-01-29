@@ -19,7 +19,7 @@ final class NasaAlertAction: UIButton {
         case `default` = 60
         case small = 44
     }
-    
+
     private var completionHandler: (() -> Void)?
 
     convenience init(title: String, style: Style, size: Size = .default, completionHandler: (() -> Void)? = nil) {
@@ -38,7 +38,7 @@ final class NasaAlertAction: UIButton {
         }
         self.addTarget(self, action: #selector(completion), for: .touchUpInside)
     }
-    
+
     @objc private func completion() {
         completionHandler?()
     }

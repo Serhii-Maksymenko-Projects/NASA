@@ -84,6 +84,10 @@ final class NasaAlert {
             UIView.addKeyframe(withRelativeStartTime: startMove, relativeDuration: 0.7) {
                 self?.contentView.transform = CGAffineTransform(translationX: 0, y: newPosition)
             }
+        } completion: { _ in
+            if !isShow {
+                self.contentView.removeFromSuperview()
+            }
         }
     }
 
