@@ -17,7 +17,6 @@ final class LoaderElementView: UIView {
     }
 
     private let diameterConstant: CGFloat = 14
-    private lazy var startConstraint = circleView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
     private lazy var circleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +32,7 @@ final class LoaderElementView: UIView {
             circleView.heightAnchor.constraint(equalToConstant: diameterConstant),
             circleView.widthAnchor.constraint(equalToConstant: diameterConstant),
             circleView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            startConstraint
+            circleView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
 
@@ -58,9 +57,12 @@ final class LoaderElementView: UIView {
 
     private func updatePosition(at position: LoadElementPosition) {
         switch position {
-        case .top: startConstraint.constant = -12
-        case .center: startConstraint.constant = 0
-        case .bottom: startConstraint.constant = +12
+        case .top:
+            circleView.transform = CGAffineTransform(translationX: 0, y: -12)
+        case .center:
+            circleView.transform = CGAffineTransform(translationX: 0, y: 0)
+        case .bottom:
+            circleView.transform = CGAffineTransform(translationX: 0, y: 12)
         }
         self.layoutIfNeeded()
     }

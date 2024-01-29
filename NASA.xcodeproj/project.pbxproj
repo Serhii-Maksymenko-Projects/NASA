@@ -262,9 +262,9 @@
 		A5E3A5182B608F43006D0313 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				A5E3A5242B6146D5006D0313 /* History */,
 				A53211B02B5C1D2F00E8FB2A /* Splash */,
 				A58E1F0C2B5C542B00DF973E /* Main */,
+				A5E3A5242B6146D5006D0313 /* History */,
 				A5E3A5132B60234B006D0313 /* Detail */,
 			);
 			path = Modules;
@@ -273,7 +273,9 @@
 		A5E3A5192B6092BC006D0313 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				A5E3A51B2B6092DF006D0313 /* Helpers */,
+				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
+				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
+				A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */,
 				A5E3A51A2B6092D2006D0313 /* Extensions */,
 			);
 			path = Common;
@@ -285,16 +287,6 @@
 				A5E3A5042B5EAA54006D0313 /* UIFont + Extension.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A5E3A51B2B6092DF006D0313 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A5E3A4F92B5DCAB6006D0313 /* RoverType.swift */,
-				A5E3A4FB2B5DCAD4006D0313 /* CameraType.swift */,
-				A5E3A5522B657810006D0313 /* TypeFilterProtocol.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A5E3A51C2B609307006D0313 /* Application */ = {

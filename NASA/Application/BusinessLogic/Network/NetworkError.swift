@@ -7,7 +7,5 @@
 
 enum NetworkError: Error {
     case urlIsNotCorrect
-    case dataIsNotCorrect
-    case pageNotFound
     case canNotParse
 }

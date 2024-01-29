@@ -12,6 +12,7 @@ struct MarsPhotoModels: Codable {
 }
 
 struct MarsPhotoModel: Codable {
+
     let roverName: String
     let cameraName: String
     let dateString: String
@@ -43,4 +44,5 @@ struct MarsPhotoModel: Codable {
     private struct Rover: Codable {
         let name: String
     }
+
 }
