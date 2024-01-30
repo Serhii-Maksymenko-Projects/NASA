@@ -15,6 +15,7 @@ final class HistoryViewController: UIViewController {
     @IBOutlet weak var filtersTableView: UITableView!
     @IBOutlet weak var emptyLogoView: UIView!
 
+    static let storyboardName = "History"
     private let viewModel: HistoryViewModelProtocol
     private let disposeBag = DisposeBag()
 
@@ -44,11 +45,11 @@ final class HistoryViewController: UIViewController {
         }.disposed(by: disposeBag)
 
         viewModel.filters.bind(to: filtersTableView.rx.items(
-            cellIdentifier: "filterCell",
+            cellIdentifier: FilterTableViewCell.cellId,
             cellType: FilterTableViewCell.self)) { [weak self] _, item, cell in
                 cell.roverLabel.text = item.roverType.rawValue.capitalized
                 cell.cameraLabel.text = item.cameraType.description
-                cell.dateLabel.text = "All date"
+                cell.dateLabel.text = StringResource.allDate
                 guard let date = item.date else { return }
                 cell.dateLabel.text = self?.dateFormatter.string(from: date)
         }.disposed(by: disposeBag)
@@ -66,14 +67,14 @@ final class HistoryViewController: UIViewController {
     func createFilterMenuAlert(filterModel: FilterModelDescription) {
         let menuFilterAlert = NasaAlertContentBuilder(
             title: nil,
-            message: "Menu Filter", messageColor: .layerTwo)
-        let useAction = NasaAlertAction(title: "Use", style: .default) { [weak self] in
+            message: StringResource.menuFilterMessage, messageColor: .layerTwo)
+        let useAction = NasaAlertAction(title: StringResource.use, style: .default) { [weak self] in
             self?.viewModel.useFilter(filter: filterModel)
         }
-        let deleteAction = NasaAlertAction(title: "Delete", style: .destructive) { [weak self] in
+        let deleteAction = NasaAlertAction(title: StringResource.delete, style: .destructive) { [weak self] in
             self?.viewModel.removeFilter(filter: filterModel)
         }
-        let cancelAction = NasaAlertAction(title: "Cancel", style: .bold)
+        let cancelAction = NasaAlertAction(title: StringResource.cancel, style: .bold)
         menuFilterAlert.addAction(action: useAction, at: .main)
         menuFilterAlert.addAction(action: deleteAction, at: .main)
         menuFilterAlert.addAction(action: cancelAction, at: .other)

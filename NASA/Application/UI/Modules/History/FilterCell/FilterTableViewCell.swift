@@ -8,6 +8,7 @@
 import UIKit
 
 final class FilterTableViewCell: UITableViewCell {
+    static let cellId = "filterCell"
 
     @IBOutlet weak var roverLabel: CardLabel!
     @IBOutlet weak var cameraLabel: CardLabel!

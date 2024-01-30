@@ -14,6 +14,8 @@ class SplashViewController: UIViewController {
     @IBOutlet private weak var thirdLoaderElement: LoaderElementView!
     @IBOutlet private weak var lastLoaderElement: LoaderElementView!
 
+    static let storyboardName = "Splash"
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         firstLoaderElement.animate(delay: 0.0)

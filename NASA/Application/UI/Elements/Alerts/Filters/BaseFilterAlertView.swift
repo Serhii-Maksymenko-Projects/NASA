@@ -22,7 +22,7 @@ class BaseFilterAlertView<T>: BaseNasaAlertContentView {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Camera"
+        label.text = ""
         label.textAlignment = .center
         label.font = UIFont.nasaTitleBold
         return label
@@ -63,6 +63,10 @@ class BaseFilterAlertView<T>: BaseNasaAlertContentView {
 
     func addSaveAction(_ completion: ((_ filterValue: T) -> Void)?) {
         completionHandler = completion
+    }
+
+    func setTitle(title: String) {
+        titleLabel.text = title
     }
 
     @objc func save() {

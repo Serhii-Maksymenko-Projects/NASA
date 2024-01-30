@@ -18,6 +18,7 @@ final class MainViewController: UIViewController {
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
 
+    static let storyboardName = "Main"
     private let viewModel: MainViewModelProtocol
     private let disposeBag = DisposeBag()
 
@@ -43,14 +44,16 @@ final class MainViewController: UIViewController {
 
     private func subscribing() {
         roverButton.rx.tap.subscribe { [weak self] _ in
-            self?.showFilterTypeAlert(values: RoverType.allCases) { selectedValue in
+            self?.showFilterTypeAlert(title: StringResource.rover,
+                                      values: RoverType.allCases) { selectedValue in
                 guard let roverType = selectedValue as? RoverType else { return }
                 self?.viewModel.roverFilter.onNext(roverType)
             }
         }.disposed(by: disposeBag)
 
         cameraButton.rx.tap.subscribe { [weak self] _ in
-            self?.showFilterTypeAlert(values: CameraType.allCases) { selectedValue in
+            self?.showFilterTypeAlert(title: StringResource.camera,
+                                      values: CameraType.allCases) { selectedValue in
                 guard let cameraType = selectedValue as? CameraType else { return }
                 self?.viewModel.cameraFilter.onNext(cameraType)
             }
@@ -58,6 +61,7 @@ final class MainViewController: UIViewController {
 
         calendarButton.rx.tap.subscribe { [weak self] _ in
             let dateAlertContent = DateFilterAlertView()
+            dateAlertContent.setTitle(title: StringResource.date)
             let alert = NasaAlert(content: dateAlertContent, style: .alert, on: self)
             dateAlertContent.addSaveAction { date in
                 guard let date = date as? Date else { return }
@@ -92,15 +96,18 @@ final class MainViewController: UIViewController {
             .disposed(by: disposeBag)
 
         viewModel.photos
-            .bind(to: tableView.rx.items(cellIdentifier: "cardCell",
+            .bind(to: tableView.rx.items(cellIdentifier: CardTableViewCell.cellId,
                                          cellType: CardTableViewCell.self)) { _, item, cell in
                 let cardViewModel = CardCellViewModel(marsPhoto: item)
                 cell.setViewModel(viewModel: cardViewModel)
         }.disposed(by: disposeBag)
     }
 
-    private func showFilterTypeAlert(values: [TypeFilterProtocol], _ completion: ((_ selectedValue: Any) -> Void)?) {
+    private func showFilterTypeAlert(title: String,
+                                     values: [TypeFilterProtocol],
+                                     _ completion: ((_ selectedValue: Any) -> Void)?) {
         let typeAlertContent = TypeFilterAlertView()
+        typeAlertContent.setTitle(title: title)
         typeAlertContent.contentText = values
         typeAlertContent.addSaveAction(completion)
         let alert = NasaAlert(content: typeAlertContent, style: .alertSheet, on: self)
@@ -109,12 +116,12 @@ final class MainViewController: UIViewController {
 
     private func createSaveFilterAlert() {
         let saveAlertContent = NasaAlertContentBuilder(
-            title: "Save Filter",
-            message: "The current filters and the date you have chosen can be saved to the filter history.")
-        let saveAction = NasaAlertAction(title: "Save", style: .bold, size: .small) { [weak self] in
+            title: StringResource.saveFilterTitle,
+            message: StringResource.saveFilterMessage)
+        let saveAction = NasaAlertAction(title: StringResource.save, style: .bold, size: .small) { [weak self] in
             self?.viewModel.saveFilter()
         }
-        let cancelAction = NasaAlertAction(title: "Cancel", style: .default, size: .small)
+        let cancelAction = NasaAlertAction(title: StringResource.cancel, style: .default, size: .small)
         saveAlertContent.addAction(action: saveAction, at: .main)
         saveAlertContent.addAction(action: cancelAction, at: .main)
         saveAlertContent.setContentPadding(62)

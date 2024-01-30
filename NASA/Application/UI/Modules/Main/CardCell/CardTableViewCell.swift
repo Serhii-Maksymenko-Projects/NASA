@@ -16,6 +16,7 @@ final class CardTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: CardLabel!
     @IBOutlet weak var photoImageView: UIImageView!
 
+    static let cellId = "cardCell"
     private let disposeBag = DisposeBag()
     private var viewModel: CardCellViewModelProtocol?
 

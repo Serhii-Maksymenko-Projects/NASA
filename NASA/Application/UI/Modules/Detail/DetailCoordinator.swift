@@ -18,9 +18,10 @@ final class DetailCoordinator: BaseCoordinator {
     }
 
     override func present() {
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        let storyboard = UIStoryboard(name: DetailViewController.storyboardName, bundle: nil)
         let viewModel = DetailViewModel(coordinator: self, photoUrl: photoUrl)
-        let viewController = storyboard.instantiateViewController(identifier: "DetailViewController") { coder in
+        let viewControllerName = String(describing: DetailViewController.self)
+        let viewController = storyboard.instantiateViewController(identifier: viewControllerName) { coder in
             return DetailViewController(coder: coder, viewModel: viewModel)
         }
         navigationController.pushViewController(viewController, animated: true)

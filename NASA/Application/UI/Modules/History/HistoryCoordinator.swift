@@ -17,8 +17,9 @@ final class HistoryCoordinator: BaseCoordinator {
 
     override func present() {
         let viewModel = HistoryViewModel(coordinator: self)
-        let storyboard = UIStoryboard(name: "History", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "HistoryViewController") { coder in
+        let storyboard = UIStoryboard(name: HistoryViewController.storyboardName, bundle: nil)
+        let viewControllerName = String(describing: HistoryViewController.self)
+        let viewController = storyboard.instantiateViewController(identifier: viewControllerName) { coder in
             return HistoryViewController(coder: coder, viewModel: viewModel)
         }
         navigationController.pushViewController(viewController, animated: true)

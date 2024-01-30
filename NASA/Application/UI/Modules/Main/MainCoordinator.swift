@@ -24,9 +24,10 @@ final class MainCoordinator: BaseCoordinator {
     }
 
     override func present() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: MainViewController.storyboardName, bundle: nil)
         let viewModel = MainViewModel(coordinator: self)
-        let viewController = storyboard.instantiateViewController(identifier: "MainViewController") { coder in
+        let viewControllerName = String(describing: MainViewController.self)
+        let viewController = storyboard.instantiateViewController(identifier: viewControllerName) { coder in
             return MainViewController(coder: coder, viewModel: viewModel)
         }
         navigationController.pushViewController(viewController, animated: true)

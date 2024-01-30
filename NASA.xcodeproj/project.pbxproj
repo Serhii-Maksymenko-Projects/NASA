@@ -63,6 +63,7 @@
 		A5E3A56B2B66A347006D0313 /* RawFilterModel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56A2B66A347006D0313 /* RawFilterModel + Extension.swift */; };
 		A5E3A56D2B66A3A9006D0313 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56C2B66A3A9006D0313 /* FilterModel.swift */; };
 		A5E3A5702B66BA7D006D0313 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A56F2B66BA7D006D0313 /* NotificationName.swift */; };
+		A5E3A5882B686DE4006D0313 /* StringResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E3A5872B686DE4006D0313 /* StringResource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		A5E3A56A2B66A347006D0313 /* RawFilterModel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawFilterModel + Extension.swift"; sourceTree = "<group>"; };
 		A5E3A56C2B66A3A9006D0313 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		A5E3A56F2B66BA7D006D0313 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		A5E3A5872B686DE4006D0313 /* StringResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringResource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				A53211A52B5C153100E8FB2A /* Colors.xcassets */,
 				A53211A72B5C168200E8FB2A /* Icons.xcassets */,
 				A5E3A55B2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld */,
+				A5E3A5872B686DE4006D0313 /* StringResource.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				A5E3A50B2B601B43006D0313 /* Coordinator.swift in Sources */,
 				A5E3A5012B5E8F0D006D0313 /* CardCellViewModel.swift in Sources */,
 				A5E3A5172B6054F3006D0313 /* SplashPresenter.swift in Sources */,
+				A5E3A5882B686DE4006D0313 /* StringResource.swift in Sources */,
 				A5E3A5412B62DD11006D0313 /* BaseFilterAlertView.swift in Sources */,
 				A53211AF2B5C186100E8FB2A /* LoaderElementView.swift in Sources */,
 				A5E3A55D2B65CE2A006D0313 /* NasaDataModel.xcdatamodeld in Sources */,

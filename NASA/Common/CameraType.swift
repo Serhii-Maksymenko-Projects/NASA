@@ -6,6 +6,7 @@
 //
 
 enum CameraType: String, CaseIterable, TypeFilterProtocol {
+
     case all = "All"
     case fhaz
     case rhaz
@@ -19,16 +20,16 @@ enum CameraType: String, CaseIterable, TypeFilterProtocol {
 
     var description: String {
         switch self {
-        case .all: "All"
-        case .fhaz: "Front Hazard Avoidance Camera"
-        case .rhaz: "Rear Hazard Avoidance Camera"
-        case .mast: "Mast Camera"
-        case .chemcam: "Chemistry and Camera Complex"
-        case .mahli: "Mars Hand Lens Imager"
-        case .mardi: "Mars Descent Imager"
-        case .navcam: "Navigation Camera"
-        case .pancam: "Panoramic Camera"
-        case .minites: "Miniature Thermal Emission Spectrometer (Mini-TES)"
+        case .all: StringResource.all
+        case .fhaz: StringResource.fhaz
+        case .rhaz: StringResource.rhaz
+        case .mast: StringResource.mast
+        case .chemcam: StringResource.chemcam
+        case .mahli: StringResource.mahli
+        case .mardi: StringResource.mardi
+        case .navcam: StringResource.navcam
+        case .pancam: StringResource.pancam
+        case .minites: StringResource.minites
         }
     }
 }

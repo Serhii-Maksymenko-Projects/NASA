@@ -15,6 +15,7 @@ final class DetailViewController: UIViewController {
     @IBOutlet weak var zoomScrollView: UIScrollView!
     @IBOutlet weak var photoImageView: UIImageView!
 
+    static let storyboardName = "Detail"
     private let viewModel: DetailViewModelProtocol
     private let disposeBag = DisposeBag()
 

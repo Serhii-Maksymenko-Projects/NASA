@@ -33,8 +33,9 @@ final class AppCoordinator: BaseCoordinator {
     }
 
     private func presentSplashViewController(scene: UIWindowScene) {
-        let storyboard = UIStoryboard(name: "Splash", bundle: nil)
-        let viewController = storyboard.instantiateViewController(identifier: "SplashViewController")
+        let storyboard = UIStoryboard(name: SplashViewController.storyboardName, bundle: nil)
+        let viewControllerName = String(describing: SplashViewController.self)
+        let viewController = storyboard.instantiateViewController(identifier: viewControllerName)
         splashPresenter = SplashPresenter(scene: scene, viewController: viewController)
         splashPresenter?.present()
     }

@@ -8,6 +8,7 @@
 import Foundation
 
 enum RoverType: String, CaseIterable, TypeFilterProtocol {
+
     case all
     case curiosity
     case opportunity
